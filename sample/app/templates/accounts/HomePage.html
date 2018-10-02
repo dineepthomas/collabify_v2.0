@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang ="en-US">
+<head>
+<meta charset ="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">-->
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet"/>
+
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
+
+<!--homestyle.css file-->
+<link href="css/homestyle.css" rel="stylesheet">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<!-- Firebase back-end code -->
+
+<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+
+
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCUI53GZ6IXzu957lBR-WWfmgEPNj-Nd8c",
+    authDomain: "collabify-us.firebaseapp.com",
+    databaseURL: "https://collabify-us.firebaseio.com",
+    projectId: "collabify-us",
+    storageBucket: "collabify-us.appspot.com",
+    messagingSenderId: "458971277153"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script src="js/index.js"/>
+<!-- /Firebase back-end code -->
+</script>
+
+
+<script type="text/javascript">
+  initApp = function() {
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        // User is signed in.
+        var displayName = user.displayName;
+        var email = user.email;
+        var emailVerified = user.emailVerified;
+        var photoURL = user.photoURL;
+        var uid = user.uid;
+        var phoneNumber = user.phoneNumber;
+        var providerData = user.providerData;
+        console.log("Display: "+user.displayName+", uid: "+user.uid);
+        loadUser();
+        console.log("there is a user here");
+        user.getIdToken().then(function(accessToken) {
+          document.getElementById('user').textContent = email;
+          /*document.getElementById('account-details').textContent = JSON.stringify({
+            displayName: displayName,
+            email: email,
+            emailVerified: emailVerified,
+            phoneNumber: phoneNumber,
+            photoURL: photoURL,
+            uid: uid,
+            accessToken: accessToken,
+            providerData: providerData
+          }, null, '  ');*/
+        });
+      } else {
+        // User is signed out.
+      }
+    }, function(error) {
+      console.log(error);
+    });
+  };
+
+  window.addEventListener('load', function() {
+    initApp()
+  });
+</script>
+</head>
+<body>
+<!--<div id="sign-in-status"></div>
+<div id="sign-in"></div>
+<div id="account-details"></div>-->
+  </body>
+</html>
+	<title>Collabify</title>
+
+	<style>
+
+		.well-header{
+			background-color:black;
+		}
+	
+		@import url(http://fonts.googleapis.com/css?family=Roboto:400);
+	
+		body {
+  			background-color:#fff;
+  			-webkit-font-smoothing: antialiased;
+  			font: normal 14px Roboto,arial,sans-serif;
+		}
+
+		.form-login {
+    		background-color: #EDEDED;
+    		padding-top: 10px;
+    		padding-bottom: 20px;
+    		padding-left: 20px;
+    		padding-right: 20px;
+    		border-radius: 15px;
+    		border-color:#d2d2d2;
+    		border-width: 5px;
+    		box-shadow:0 1px 0 #cfcfcf;
+		}
+		.form-control {
+    		border-radius: 10px;
+		}
+		.wrapper {
+    		text-align: center;
+		}
+		.image-opacity{
+			opacity:0.2;
+		}
+		.footer-bg{
+			color:black;
+		}
+		.footer-main{
+			background-color:black;
+		}
+		.plot_img{
+			height: 300px;
+			width: 300px;
+		}
+		.card-border{
+			border: 5px;
+			border-width: medium;
+		}
+		.navbar{
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+		input[type=text] {
+    		width: 225px;
+    		height: 30px;
+    		box-sizing: border-box;
+    		border: 2px solid #ccc;
+    		border-radius: 4px;
+    		font-size: 0px;
+    		background-color: white;
+    		background-repeat: no-repeat;
+		}
+
+		body{
+			background-image:css/images/collaboration.jpg;
+		}
+	</style>
+
+</head>
+<body>
+
+<!--Navbar-->
+<div class = "container-fluid">
+	<nav class="navbar">
+		<ul class="nav navbar-nav">
+      		<a href ="index.html">
+			<img src="css/images/CollabifyLogo.png" style = "height: 50px; width:130px; padding: 5px;"></a>
+		</ul>
+		<ul style="font-size:18px" class="nav navbar-nav">
+            <li class="active"><a href="HomePage.html"><font color="white">Home</font></a></li>
+        </ul>
+        <ul style="font-size:18px" class="nav navbar-nav">
+            <li><a href="Profile.html"><font color="white">Profile</font></a></li>
+        </ul>
+		<div style="float:right; padding-top: 7px;" >
+			<button class="btn btn-primary btn-medium" id="btnLogout" onclick="logout()">Logout</button> 
+		</div>
+		<form style="padding-top:2px">
+  			<input type="text" name="search" placeholder="Search..">
+		</form>
+	</nav>
+</div>
+<!-- /Navbar -->
+
+<div class="container-fluid">
+
+<!-- Header container -->
+	<div class="well well-header">
+
+		<p align="left" style="color:white; font-size:25px;"><strong> Collabify: </strong> Create,Share,Collaborate;</p>
+
+      <p id="greeting" style="color:white;"><strong> Welcome!</strong></p>
+      <p id="user" style="color:white;"> </p>
+	</div>
+<!-- /Header container -->
+
+
+<div class="container-fluid">
+	<p id ="print"></p>
+	<!--Active Projects-->
+	<div class="well container-fluid" style="background-color:#549fbc;"><p align="center" style="font-size:20px;"><strong>Active Projects</strong></p> </div>
+	<div class="card" align="left" style="width: 18rem; float:left; padding:25px;">
+		<img class="card-img-top" src="css/images/Tool.png" style="height:125px; width:150px;" alt="Card image cap">
+		<div class="card-body">
+			<h5 class="card-title"><strong>Project 1</strong></h5>
+			<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+			<a href="Board.html" class="btn btn-primary">View</a>
+		</div>
+	</div>
+	<div class="card" align="left" style="width: 18rem; float:left; padding:25px;">
+		<img class="card-img-top" src="css/images/Tool.png" style="height:125px; width:150px;" alt="Card image cap">
+		<div class="card-body">
+			<h5 class="card-title"><strong>Project 2</strong></h5>
+			<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+			<a href="Board.html" class="btn btn-primary">View</a>
+		</div>
+	</div>
+	<div id="Project 1" class="card" align="left" style="width: 18rem; float:left; padding:25px;">
+		<img class="card-img-top" src="css/images/Tool.png" style="height:125px; width:150px;">
+
+		<div class="card-body">
+			<h5 id="projectname" class="card-title"><strong>Project 3</strong></h5>
+			<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+			<!--<a href="Board.html" class="btn btn-primary">View</a>-->
+			<button onclick="loadUser()">Hello</button>
+		</div>
+	</div>
+	<!--/Active Projects-->
+</div>
+
+	
+
+		<div class="well container-fluid" style="background-color:#549fbc;"><p align="center" style="font-size:20px;"><strong>Active Groups</strong></p> </div>
+		<div class="card" align="left" style="width: 18rem; float:left; padding:25px;">
+					<img class="card-img-top" src="css/images/Group.png" style="height:200px; width:200px;" alt="Card image cap">
+					<div class="card-body">
+						<h5 class="card-title"><strong>Team Geaux</strong></h5>
+						<p class="card-text">This team consists of Charles, Michael, Preston and Vikram. The group is working on Collabify, a simple project management app.</p>
+						<a href="#" class="btn btn-primary">View</a>
+					</div>
+				</div>
+		
+	
+	<br>
+
+</div>
+</div>
+</body>
+<html>

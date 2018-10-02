@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container">
+<h1> Welcome</h1>
+<p> Welcome please login here </p>
+<script>
+    console.log("dineep here login page");
+</script>
+<h2> Login </h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="btn btn-primary" type="submit">Login</button>
+</form>
+</div>
+{% endblock %}
+
+<!--<body>
+    <div class="container">
+    <h3>Welcome</h3>
+    <button class="btn btn-default" type="button" name="button">Login</button>
+    <button class="btn btn-primary" type="button" name="button">Login</button>
+    <button class="btn btn-success" type="button" name="button">Login</button>
+    <button class="btn btn-link" type="button" name="button">Login</button>
+    </div>
+    <div class="jumbotron">
+    <h3>Welcome</h3>
+    <button class="btn btn-default" type="button" name="button">Login</button>
+    <button class="btn btn-primary" type="button" name="button">Login</button>
+    <button class="btn btn-success" type="button" name="button">Login</button>
+    <button class="btn btn-link" type="button" name="button">Login</button>
+    </div>
+</body>
+ <h2>{{ myname }}</h2>
+ <ul>
+     {% for i in numbers %}
+     <li> {{ i }}</li>
+     {% endfor %}
+ </ul>-->
