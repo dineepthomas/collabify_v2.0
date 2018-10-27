@@ -13,9 +13,22 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf.urls import url, include
+from django.contrib.auth import views as auth_views
 from django.contrib import admin
-from django.urls import path
+from scripts import views as core_views
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-]
+    url(r'^$', core_views.home, name='home'),
+    url(r'^login/$', auth_views.login, {'template_name': 'login.html'}, name='login'),
+    url(r'^logout/$', auth_views.logout, {'next_page': 'login'}, name='logout'),
+    url(r'^signup/$', core_views.signup, name='signup'),
+    url(r'^account_activation_sent/$', core_views.account_activation_sent, name='account_activation_sent'),
+    url(r'^activate/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$',
+        core_views.activate, name='activate'),
+    # url(r'^change_password/$',core_views.change_password, name ='change_password'),
+    url(r'^admin/', admin.site.urls),
+    ]
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS)

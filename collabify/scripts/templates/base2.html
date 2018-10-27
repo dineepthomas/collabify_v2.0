@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang ="en-US">
+<head>
+<meta charset ="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet"/>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
+{% load static %}
+<link href="{% static 'css/homestyle.css' %}" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+{% if user.is_authenticated %}
+  <a href="{% url 'logout' %}">logout</a>
+{% else %}
+  <a href="{% url 'login' %}">login</a> / <a href="{% url 'signup' %}">signup</a>
+{% endif %}
+
+</head>
+
+
+
+<title>Collabify</title>
+
+
+<style>
+
+.well-header{
+	background-color:black;
+}
+@import url(http://fonts.googleapis.com/css?family=Roboto:400);
+body {
+	background-image: url("static/css/images/CollabifyLogIn.jpg");
+  /* background-image: "{% static 'css/images/CollabifyLogIn.jpg' %}"; */
+  	background-color:#fff;
+  	-webkit-font-smoothing: antialiased;
+  	font: normal 14px Roboto,arial,sans-serif;
+}
+footer{
+	position:;
+}
+.form-login {
+    background-color: #EDEDED;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 15px;
+    border-color:#d2d2d2;
+    border-width: 5px;
+    box-shadow:0 1px 0 #cfcfcf;
+}
+
+#su{
+	max-width: 400px;
+	height: 380px;
+	border-radius: 5px;
+    background-color: #f2f2f2;
+    font-family:arial;
+}
+
+.form-control {
+    border-radius: 10px;
+}
+
+.wrapper {
+    text-align: center;
+}
+.image-opacity{
+	opacity:0.2;
+}
+.footer-bg{
+	color:black;
+}
+.footer-main{
+	background-color:black;
+  margin: 15px;
+
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    /*padding: 0;*/
+    overflow: hidden;
+
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+#logo {
+	padding: none !important;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #111;
+}
+
+input[type=text] {
+    width: 225px;
+    height: 30px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 0px;
+    background-color: white;
+    background-repeat: no-repeat;
+}
+
+h3{
+	font-color:white;
+}
+
+.navbar{
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.astext {
+    background:none;
+    border:none;
+    margin:0;
+    padding:0;
+}
+
+</style>
+
+
+</html>

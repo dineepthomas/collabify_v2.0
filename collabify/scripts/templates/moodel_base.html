@@ -1,0 +1,610 @@
+
+<!DOCTYPE html>
+
+<html  dir="ltr" lang="en" xml:lang="en">
+<head>
+    <title>Mount Orange School</title>
+    <link rel="shortcut icon" href="https://school.demo.moodle.net/theme/image.php/boost/theme/1540332075/favicon" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1099.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
+<meta name="keywords" content="moodle, Mount Orange School" />
+<link rel="stylesheet" type="text/css" href="https://school.demo.moodle.net/theme/yui_combo.php?rollup/3.17.2/yui-moodlesimple.css" /><script id="firstthemesheet" type="text/css">/** Required in order to fix style inclusion problems in IE with YUI **/</script><link rel="stylesheet" type="text/css" href="https://school.demo.moodle.net/theme/styles.php/boost/1540332075_1540335666/all" />
+<script type="text/javascript">
+//<![CDATA[
+var M = {}; M.yui = {};
+M.pageloadstarttime = new Date();
+M.cfg = {"wwwroot":"https:\/\/school.demo.moodle.net","sesskey":"YgOORmAWW6","themerev":"1540332075","slasharguments":1,"theme":"boost","iconsystemmodule":"core\/icon_system_fontawesome","jsrev":"1540332075","admin":"admin","svgicons":true,"usertimezone":"UTC+1","contextid":2,"developerdebug":true};var yui1ConfigFn = function(me) {if(/-skin|reset|fonts|grids|base/.test(me.name)){me.type='css';me.path=me.path.replace(/\.js/,'.css');me.path=me.path.replace(/\/yui2-skin/,'/assets/skins/sam/yui2-skin')}};
+var yui2ConfigFn = function(me) {var parts=me.name.replace(/^moodle-/,'').split('-'),component=parts.shift(),module=parts[0],min='-min';if(/-(skin|core)$/.test(me.name)){parts.pop();me.type='css';min=''}
+if(module){var filename=parts.join('-');me.path=component+'/'+module+'/'+filename+min+'.'+me.type}else{me.path=component+'/'+component+'.'+me.type}};
+YUI_config = {"debug":true,"base":"https:\/\/school.demo.moodle.net\/lib\/yuilib\/3.17.2\/","comboBase":"https:\/\/school.demo.moodle.net\/theme\/yui_combo.php?","combine":true,"filter":"RAW","insertBefore":"firstthemesheet","groups":{"yui2":{"base":"https:\/\/school.demo.moodle.net\/lib\/yuilib\/2in3\/2.9.0\/build\/","comboBase":"https:\/\/school.demo.moodle.net\/theme\/yui_combo.php?","combine":true,"ext":false,"root":"2in3\/2.9.0\/build\/","patterns":{"yui2-":{"group":"yui2","configFn":yui1ConfigFn}}},"moodle":{"name":"moodle","base":"https:\/\/school.demo.moodle.net\/theme\/yui_combo.php?m\/1540332075\/","combine":true,"comboBase":"https:\/\/school.demo.moodle.net\/theme\/yui_combo.php?","ext":false,"root":"m\/1540332075\/","patterns":{"moodle-":{"group":"moodle","configFn":yui2ConfigFn}},"filter":"DEBUG","modules":{"moodle-core-dragdrop":{"requires":["base","node","io","dom","dd","event-key","event-focus","moodle-core-notification"]},"moodle-core-popuphelp":{"requires":["moodle-core-tooltip"]},"moodle-core-chooserdialogue":{"requires":["base","panel","moodle-core-notification"]},"moodle-core-notification":{"requires":["moodle-core-notification-dialogue","moodle-core-notification-alert","moodle-core-notification-confirm","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-core-notification-dialogue":{"requires":["base","node","panel","escape","event-key","dd-plugin","moodle-core-widget-focusafterclose","moodle-core-lockscroll"]},"moodle-core-notification-alert":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-confirm":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-exception":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-ajaxexception":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-actionmenu":{"requires":["base","event","node-event-simulate"]},"moodle-core-formchangechecker":{"requires":["base","event-focus","moodle-core-event"]},"moodle-core-checknet":{"requires":["base-base","moodle-core-notification-alert","io-base"]},"moodle-core-languninstallconfirm":{"requires":["base","node","moodle-core-notification-confirm","moodle-core-notification-alert"]},"moodle-core-event":{"requires":["event-custom"]},"moodle-core-dock":{"requires":["base","node","event-custom","event-mouseenter","event-resize","escape","moodle-core-dock-loader","moodle-core-event"]},"moodle-core-dock-loader":{"requires":["escape"]},"moodle-core-maintenancemodetimer":{"requires":["base","node"]},"moodle-core-tooltip":{"requires":["base","node","io-base","moodle-core-notification-dialogue","json-parse","widget-position","widget-position-align","event-outside","cache-base"]},"moodle-core-handlebars":{"condition":{"trigger":"handlebars","when":"after"}},"moodle-core-lockscroll":{"requires":["plugin","base-build"]},"moodle-core-blocks":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification"]},"moodle-core_availability-form":{"requires":["base","node","event","event-delegate","panel","moodle-core-notification-dialogue","json"]},"moodle-backup-backupselectall":{"requires":["node","event","node-event-simulate","anim"]},"moodle-backup-confirmcancel":{"requires":["node","node-event-simulate","moodle-core-notification-confirm"]},"moodle-course-util":{"requires":["node"],"use":["moodle-course-util-base"],"submodules":{"moodle-course-util-base":{},"moodle-course-util-section":{"requires":["node","moodle-course-util-base"]},"moodle-course-util-cm":{"requires":["node","moodle-course-util-base"]}}},"moodle-course-dragdrop":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification","moodle-course-coursebase","moodle-course-util"]},"moodle-course-formatchooser":{"requires":["base","node","node-event-simulate"]},"moodle-course-modchooser":{"requires":["moodle-core-chooserdialogue","moodle-course-coursebase"]},"moodle-course-management":{"requires":["base","node","io-base","moodle-core-notification-exception","json-parse","dd-constrain","dd-proxy","dd-drop","dd-delegate","node-event-delegate"]},"moodle-course-categoryexpander":{"requires":["node","event-key"]},"moodle-form-dateselector":{"requires":["base","node","overlay","calendar"]},"moodle-form-shortforms":{"requires":["node","base","selector-css3","moodle-core-event"]},"moodle-form-showadvanced":{"requires":["node","base","selector-css3"]},"moodle-form-passwordunmask":{"requires":[]},"moodle-question-qbankmanager":{"requires":["node","selector-css3"]},"moodle-question-preview":{"requires":["base","dom","event-delegate","event-key","core_question_engine"]},"moodle-question-chooser":{"requires":["moodle-core-chooserdialogue"]},"moodle-question-searchform":{"requires":["base","node"]},"moodle-availability_completion-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_date-form":{"requires":["base","node","event","io","moodle-core_availability-form"]},"moodle-availability_grade-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_group-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_grouping-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_profile-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-qtype_ddimageortext-form":{"requires":["moodle-qtype_ddimageortext-dd","form_filepicker"]},"moodle-qtype_ddimageortext-dd":{"requires":["node","dd","dd-drop","dd-constrain"]},"moodle-qtype_ddmarker-form":{"requires":["moodle-qtype_ddmarker-dd","form_filepicker","graphics","escape"]},"moodle-qtype_ddmarker-dd":{"requires":["node","event-resize","dd","dd-drop","dd-constrain","graphics"]},"moodle-qtype_ddwtos-dd":{"requires":["node","dd","dd-drop","dd-constrain"]},"moodle-mod_assign-history":{"requires":["node","transition"]},"moodle-mod_forum-subscriptiontoggle":{"requires":["base-base","io-base"]},"moodle-mod_quiz-util":{"requires":["node","moodle-core-actionmenu"],"use":["moodle-mod_quiz-util-base"],"submodules":{"moodle-mod_quiz-util-base":{},"moodle-mod_quiz-util-slot":{"requires":["node","moodle-mod_quiz-util-base"]},"moodle-mod_quiz-util-page":{"requires":["node","moodle-mod_quiz-util-base"]}}},"moodle-mod_quiz-autosave":{"requires":["base","node","event","event-valuechange","node-event-delegate","io-form"]},"moodle-mod_quiz-dragdrop":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification","moodle-mod_quiz-quizbase","moodle-mod_quiz-util-base","moodle-mod_quiz-util-page","moodle-mod_quiz-util-slot","moodle-course-util"]},"moodle-mod_quiz-repaginate":{"requires":["base","event","node","io","moodle-core-notification-dialogue"]},"moodle-mod_quiz-questionchooser":{"requires":["moodle-core-chooserdialogue","moodle-mod_quiz-util","querystring-parse"]},"moodle-mod_quiz-toolboxes":{"requires":["base","node","event","event-key","io","moodle-mod_quiz-quizbase","moodle-mod_quiz-util-slot","moodle-core-notification-ajaxexception"]},"moodle-mod_quiz-quizbase":{"requires":["base","node"]},"moodle-mod_quiz-modform":{"requires":["base","node","event"]},"moodle-message_airnotifier-toolboxes":{"requires":["base","node","io"]},"moodle-filter_glossary-autolinker":{"requires":["base","node","io-base","json-parse","event-delegate","overlay","moodle-core-event","moodle-core-notification-alert","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-filter_mathjaxloader-loader":{"requires":["moodle-core-event"]},"moodle-editor_atto-rangy":{"requires":[]},"moodle-editor_atto-editor":{"requires":["node","transition","io","overlay","escape","event","event-simulate","event-custom","node-event-html5","node-event-simulate","yui-throttle","moodle-core-notification-dialogue","moodle-core-notification-confirm","moodle-editor_atto-rangy","handlebars","timers","querystring-stringify"]},"moodle-editor_atto-plugin":{"requires":["node","base","escape","event","event-outside","handlebars","event-custom","timers","moodle-editor_atto-menu"]},"moodle-editor_atto-menu":{"requires":["moodle-core-notification-dialogue","node","event","event-custom"]},"moodle-report_eventlist-eventfilter":{"requires":["base","event","node","node-event-delegate","datatable","autocomplete","autocomplete-filters"]},"moodle-report_loglive-fetchlogs":{"requires":["base","event","node","io","node-event-delegate"]},"moodle-gradereport_grader-gradereporttable":{"requires":["base","node","event","handlebars","overlay","event-hover"]},"moodle-gradereport_history-userselector":{"requires":["escape","event-delegate","event-key","handlebars","io-base","json-parse","moodle-core-notification-dialogue"]},"moodle-tool_capability-search":{"requires":["base","node"]},"moodle-tool_lp-dragdrop-reorder":{"requires":["moodle-core-dragdrop"]},"moodle-tool_monitor-dropdown":{"requires":["base","event","node"]},"moodle-assignfeedback_editpdf-editor":{"requires":["base","event","node","io","graphics","json","event-move","event-resize","transition","querystring-stringify-simple","moodle-core-notification-dialog","moodle-core-notification-alert","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-atto_accessibilitychecker-button":{"requires":["color-base","moodle-editor_atto-plugin"]},"moodle-atto_accessibilityhelper-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_align-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_bold-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_charmap-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_clear-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_collapse-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_emoticon-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_equation-button":{"requires":["moodle-editor_atto-plugin","moodle-core-event","io","event-valuechange","tabview","array-extras"]},"moodle-atto_html-button":{"requires":["moodle-editor_atto-plugin","event-valuechange"]},"moodle-atto_image-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_indent-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_italic-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_link-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_managefiles-usedfiles":{"requires":["node","escape"]},"moodle-atto_managefiles-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_media-button":{"requires":["moodle-editor_atto-plugin","moodle-form-shortforms"]},"moodle-atto_noautolink-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_orderedlist-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_recordrtc-recording":{"requires":["moodle-atto_recordrtc-button"]},"moodle-atto_recordrtc-button":{"requires":["moodle-editor_atto-plugin","moodle-atto_recordrtc-recording"]},"moodle-atto_rtl-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_strike-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_subscript-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_superscript-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_table-button":{"requires":["moodle-editor_atto-plugin","moodle-editor_atto-menu","event","event-valuechange"]},"moodle-atto_title-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_underline-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_undo-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_unorderedlist-button":{"requires":["moodle-editor_atto-plugin"]}}},"gallery":{"name":"gallery","base":"https:\/\/school.demo.moodle.net\/lib\/yuilib\/gallery\/","combine":true,"comboBase":"https:\/\/school.demo.moodle.net\/theme\/yui_combo.php?","ext":false,"root":"gallery\/1540332075\/","patterns":{"gallery-":{"group":"gallery"}}}},"modules":{"core_filepicker":{"name":"core_filepicker","fullpath":"https:\/\/school.demo.moodle.net\/lib\/javascript.php\/1540332075\/repository\/filepicker.js","requires":["base","node","node-event-simulate","json","async-queue","io-base","io-upload-iframe","io-form","yui2-treeview","panel","cookie","datatable","datatable-sort","resize-plugin","dd-plugin","escape","moodle-core_filepicker","moodle-core-notification-dialogue"]},"core_comment":{"name":"core_comment","fullpath":"https:\/\/school.demo.moodle.net\/lib\/javascript.php\/1540332075\/comment\/comment.js","requires":["base","io-base","node","json","yui2-animation","overlay","escape"]},"mathjax":{"name":"mathjax","fullpath":"https:\/\/cdnjs.cloudflare.com\/ajax\/libs\/mathjax\/2.7.2\/MathJax.js?delayStartupUntil=configured"}}};
+M.yui.loader = {modules: {}};
+
+//]]>
+</script>
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,300&amp;amp;subset=latin,cyrillic-ext,greek-ext,greek,vietnamese,latin-ext,cyrillic" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body  id="page-site-index" class="format-site course path-site safari dir-ltr lang-en yui-skin-sam yui3-skin-sam school-demo-moodle-net pagelayout-frontpage course-1 context-2 drawer-open-left">
+
+<div id="page-wrapper">
+
+    <div>
+    <a class="sr-only sr-only-focusable" href="#maincontent">Skip to main content</a>
+</div><script type="text/javascript" src="https://school.demo.moodle.net/theme/yui_combo.php?rollup/3.17.2/yui-moodlesimple.js"></script><script type="text/javascript" src="https://school.demo.moodle.net/lib/javascript.php/1540332075/lib/javascript-static.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+document.body.className += ' jsenabled';
+//]]>
+</script>
+
+
+
+    <nav class="fixed-top navbar navbar-light bg-white navbar-expand moodle-has-zindex">
+
+            <div data-region="drawer-toggle" class="d-inline-block mr-3">
+                <button aria-expanded="true" aria-controls="nav-drawer" type="button" class="btn nav-link float-sm-left mr-1 btn-secondary" data-action="toggle-drawer" data-side="left" data-preference="drawer-open-nav"><i class="icon fa fa-bars fa-fw " aria-hidden="true"  aria-label=""></i><span class="sr-only">Side panel</span></button>
+            </div>
+
+            <a href="https://school.demo.moodle.net" class="navbar-brand
+                    d-none d-sm-inline
+                    ">
+                <span class="site-name d-none d-md-inline">Mount Orange School</span>
+            </a>
+
+            <ul class="navbar-nav d-none d-md-flex">
+                <!-- custom_menu -->
+                <li class="dropdown nav-item">
+    <a class="dropdown-toggle nav-link" id="drop-down-5bcfae00f1db35bcfae00f06944" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
+        English ‎(en)‎
+    </a>
+    <div class="dropdown-menu" aria-labelledby="drop-down-5bcfae00f1db35bcfae00f06944">
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=am" title=" አማርኛ ‎(am)‎"> አማርኛ ‎(am)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=af" title="Afrikaans ‎(af)‎">Afrikaans ‎(af)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=an" title="Aragonés ‎(an)‎">Aragonés ‎(an)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=oc_es" title="Aranés ‎(oc_es)‎">Aranés ‎(oc_es)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=ast" title="Asturianu ‎(ast)‎">Asturianu ‎(ast)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=az" title="Azərbaycanca ‎(az)‎">Azərbaycanca ‎(az)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=ms" title="Bahasa Melayu ‎(ms)‎">Bahasa Melayu ‎(ms)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=bi" title="Bislama ‎(bi)‎">Bislama ‎(bi)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=bs" title="Bosanski ‎(bs)‎">Bosanski ‎(bs)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=br" title="Breizh ‎(br)‎">Breizh ‎(br)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=ca" title="Català ‎(ca)‎">Català ‎(ca)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=ca_valencia" title="Català (Valencià) ‎(ca_valencia)‎">Català (Valencià) ‎(ca_valencia)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=cs" title="Čeština ‎(cs)‎">Čeština ‎(cs)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=mis" title="Crnogorski ‎(mis)‎">Crnogorski ‎(mis)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=cy" title="Cymraeg ‎(cy)‎">Cymraeg ‎(cy)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=da" title="Dansk ‎(da)‎">Dansk ‎(da)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=se" title="Davvisámegiella ‎(se)‎">Davvisámegiella ‎(se)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=de" title="Deutsch ‎(de)‎">Deutsch ‎(de)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=dsb" title="Dolnoserbski ‎(dsb)‎">Dolnoserbski ‎(dsb)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=mh" title="Ebon ‎(mh)‎">Ebon ‎(mh)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=et" title="eesti ‎(et)‎">eesti ‎(et)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=en_us" title="English - United States ‎(en_us)‎">English - United States ‎(en_us)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=en" title="English ‎(en)‎">English ‎(en)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=es_mx" title="English ‎(es_mx)‎">English ‎(es_mx)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=es" title="Español - Internacional ‎(es)‎">Español - Internacional ‎(es)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=es_mx_old" title="Español - México ‎(es_mx_old)‎">Español - México ‎(es_mx_old)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=es_ve" title="Español Venezuela ‎(es_ve)‎">Español Venezuela ‎(es_ve)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=eo" title="Esperanto ‎(eo)‎">Esperanto ‎(eo)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=eu" title="Euskara ‎(eu)‎">Euskara ‎(eu)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=fil" title="Filipino ‎(fil)‎">Filipino ‎(fil)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=sv_fi" title="Finlandssvenska ‎(sv_fi)‎">Finlandssvenska ‎(sv_fi)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=fo" title="Føroyskt ‎(fo)‎">Føroyskt ‎(fo)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=fr_ca" title="Français - Canada ‎(fr_ca)‎">Français - Canada ‎(fr_ca)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=fr" title="Français ‎(fr)‎">Français ‎(fr)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=ga" title="Gaeilge ‎(ga)‎">Gaeilge ‎(ga)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=gd" title="Gàidhlig ‎(gd)‎">Gàidhlig ‎(gd)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=gl" title="Galego ‎(gl)‎">Galego ‎(gl)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=oc_gsc" title="Gascon ‎(oc_gsc)‎">Gascon ‎(oc_gsc)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=ha" title="Hausa ‎(ha)‎">Hausa ‎(ha)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=hr" title="Hrvatski ‎(hr)‎">Hrvatski ‎(hr)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=id" title="Indonesian ‎(id)‎">Indonesian ‎(id)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=zu" title="isiZulu ‎(zu)‎">isiZulu ‎(zu)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=is" title="Íslenska ‎(is)‎">Íslenska ‎(is)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=it" title="Italiano ‎(it)‎">Italiano ‎(it)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=kl" title="Kalaallisut ‎(kl)‎">Kalaallisut ‎(kl)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=sw" title="Kiswahili ‎(sw)‎">Kiswahili ‎(sw)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=hat" title="Kreyòl Ayisyen ‎(hat)‎">Kreyòl Ayisyen ‎(hat)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=kmr" title="Kurmanji ‎(kmr)‎">Kurmanji ‎(kmr)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=lo" title="Laotian ‎(lo)‎">Laotian ‎(lo)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=la" title="Latin ‎(la)‎">Latin ‎(la)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=lv" title="Latviešu ‎(lv)‎">Latviešu ‎(lv)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=oc_lnc" title="Lengadocian ‎(oc_lnc)‎">Lengadocian ‎(oc_lnc)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=lb" title="Lëtzebuergesch ‎(lb)‎">Lëtzebuergesch ‎(lb)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=lt" title="Lietuvių ‎(lt)‎">Lietuvių ‎(lt)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=smj" title="Lulesamisk ‎(smj)‎">Lulesamisk ‎(smj)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=hu" title="magyar ‎(hu)‎">magyar ‎(hu)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=mg" title="Malagasy ‎(mg)‎">Malagasy ‎(mg)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=mi_tn" title="Māori - Tainui ‎(mi_tn)‎">Māori - Tainui ‎(mi_tn)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=mi_wwow" title="Māori - Waikato ‎(mi_wwow)‎">Māori - Waikato ‎(mi_wwow)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=mn_mong" title="Mongolian ‎(mn_mong)‎">Mongolian ‎(mn_mong)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=my" title="myanma bhasa ‎(my)‎">myanma bhasa ‎(my)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=nl" title="Nederlands ‎(nl)‎">Nederlands ‎(nl)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=no" title="Norsk - bokmål ‎(no)‎">Norsk - bokmål ‎(no)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=nn" title="Norsk - nynorsk ‎(nn)‎">Norsk - nynorsk ‎(nn)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=no_gr" title="Norsk ‎(no_gr)‎">Norsk ‎(no_gr)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=uz" title="O'zbekcha ‎(uz)‎">O'zbekcha ‎(uz)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=pl" title="Polski ‎(pl)‎">Polski ‎(pl)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=pt_br" title="Português - Brasil ‎(pt_br)‎">Português - Brasil ‎(pt_br)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=pt" title="Português - Portugal ‎(pt)‎">Português - Portugal ‎(pt)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=ro" title="Română ‎(ro)‎">Română ‎(ro)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=rm_surs" title="Romansh Sursilvan ‎(rm_surs)‎">Romansh Sursilvan ‎(rm_surs)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=sm" title="Samoan ‎(sm)‎">Samoan ‎(sm)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=tn" title="Setswana ‎(tn)‎">Setswana ‎(tn)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=sq" title="Shqip ‎(sq)‎">Shqip ‎(sq)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=sl" title="Sloven&#353;&#269;ina ‎(sl)‎">Sloven&#353;&#269;ina ‎(sl)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=sk" title="Slovenčina ‎(sk)‎">Slovenčina ‎(sk)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=so" title="Soomaali ‎(so)‎">Soomaali ‎(so)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=sma" title="Sørsamisk ‎(sma)‎">Sørsamisk ‎(sma)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=sr_lt" title="Srpski ‎(sr_lt)‎">Srpski ‎(sr_lt)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=fi" title="Suomi ‎(fi)‎">Suomi ‎(fi)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=fi_co" title="Suomi+ ‎(fi_co)‎">Suomi+ ‎(fi_co)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=sv" title="Svenska ‎(sv)‎">Svenska ‎(sv)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=tl" title="Tagalog ‎(tl)‎">Tagalog ‎(tl)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=ta" title="Tamil ‎(ta)‎">Tamil ‎(ta)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=kab" title="Taqbaylit ‎(kab)‎">Taqbaylit ‎(kab)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=th" title="Thai ‎(th)‎">Thai ‎(th)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=to" title="Tongan ‎(to)‎">Tongan ‎(to)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=tr" title="Türkçe ‎(tr)‎">Türkçe ‎(tr)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=tk" title="Turkmen ‎(tk)‎">Turkmen ‎(tk)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=fj" title="VakaViti ‎(fj)‎">VakaViti ‎(fj)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=vi" title="Vietnamese ‎(vi)‎">Vietnamese ‎(vi)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=wo" title="Wolof ‎(wo)‎">Wolof ‎(wo)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=el" title="Ελληνικά ‎(el)‎">Ελληνικά ‎(el)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=ba" title="Башҡорт теле ‎(ba)‎">Башҡорт теле ‎(ba)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=be" title="Беларуская ‎(be)‎">Беларуская ‎(be)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=bg" title="Български ‎(bg)‎">Български ‎(bg)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=ky" title="Кыргызча ‎(ky)‎">Кыргызча ‎(ky)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=kk" title="Қазақша ‎(kk)‎">Қазақша ‎(kk)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=mk" title="Македонски ‎(mk)‎">Македонски ‎(mk)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=mn" title="Монгол ‎(mn)‎">Монгол ‎(mn)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=ru" title="Русский ‎(ru)‎">Русский ‎(ru)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=sr_cr" title="Српски ‎(sr_cr)‎">Српски ‎(sr_cr)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=tt" title="татар теле ‎(tt)‎">татар теле ‎(tt)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=tg" title="Тоҷикӣ ‎(tg)‎">Тоҷикӣ ‎(tg)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=uk" title="Українська ‎(uk)‎">Українська ‎(uk)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=ka" title="ქართული ‎(ka)‎">ქართული ‎(ka)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=hy" title="Հայերեն ‎(hy)‎">Հայերեն ‎(hy)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=he" title="עברית ‎(he)‎">עברית ‎(he)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=ur" title="اردو ‎(ur)‎">اردو ‎(ur)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=ps" title="پښتو ‎(ps)‎">پښتو ‎(ps)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=ckb" title="سۆرانی ‎(ckb)‎">سۆرانی ‎(ckb)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=ar" title="عربي ‎(ar)‎">عربي ‎(ar)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=fa" title="فارسی ‎(fa)‎">فارسی ‎(fa)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=dv" title="ދިވެހި ‎(dv)‎">ދިވެހި ‎(dv)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=zgh" title="ⵜⴰⵎⴰⵣⵉⵖⵜ ‎(zgh)‎">ⵜⴰⵎⴰⵣⵉⵖⵜ ‎(zgh)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=ti" title="ትግርኛ ‎(ti)‎">ትግርኛ ‎(ti)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=ne" title="नेपाली ‎(ne)‎">नेपाली ‎(ne)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=mr" title="मराठी ‎(mr)‎">मराठी ‎(mr)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=hi" title="हिंदी ‎(hi)‎">हिंदी ‎(hi)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=bn" title="বাংলা ‎(bn)‎">বাংলা ‎(bn)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=pan" title="ਪੰਜਾਬੀ ‎(pan)‎">ਪੰਜਾਬੀ ‎(pan)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=gu" title="ગુજરાતી ‎(gu)‎">ગુજરાતી ‎(gu)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=or" title="ଓଡ଼ିଆ ‎(or)‎">ଓଡ଼ିଆ ‎(or)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=ta_lk" title="தமிழ் ‎(ta_lk)‎">தமிழ் ‎(ta_lk)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=te" title="తెలుగు  ‎(te)‎">తెలుగు  ‎(te)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=kn" title="ಕನ್ನಡ ‎(kn)‎">ಕನ್ನಡ ‎(kn)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=ml" title="മലയാളം ‎(ml)‎">മലയാളം ‎(ml)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=si" title="සිංහල ‎(si)‎">සිංහල ‎(si)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=xct" title="བོད་ཡིག ‎(xct)‎">བོད་ཡིག ‎(xct)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=dz" title="རྫོང་ཁ ‎(dz)‎">རྫོང་ཁ ‎(dz)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=km" title="ខ្មែរ ‎(km)‎">ខ្មែរ ‎(km)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=ko" title="한국어 ‎(ko)‎">한국어 ‎(ko)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=ja" title="日本語 ‎(ja)‎">日本語 ‎(ja)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=zh_tw" title="正體中文 ‎(zh_tw)‎">正體中文 ‎(zh_tw)‎</a>
+                <a class="dropdown-item" href="https://school.demo.moodle.net/?lang=zh_cn" title="简体中文 ‎(zh_cn)‎">简体中文 ‎(zh_cn)‎</a>
+    </div>
+</li>
+                <!-- page_heading_menu -->
+
+            </ul>
+            <ul class="nav navbar-nav ml-auto">
+                <div class="d-none d-lg-block">
+                <div class="search-input-wrapper nav-link" id="5bcfae00f252c"><div role="button" tabindex="0"><i class="icon fa fa-search fa-fw " aria-hidden="true" title="Search" aria-label="Search"></i></div><form class="search-input-form" action="https://school.demo.moodle.net/search/index.php"><label for="id_q_5bcfae00f252c" class="accesshide">Enter your search query</label><input type="text" name="q" placeholder="Search" size="13" tabindex="-1" id="id_q_5bcfae00f252c" class="form-control"></input><input type="hidden" name="context" value="2" /></form></div>
+            </div>
+                <!-- navbar_plugin_output -->
+                <li class="nav-item">
+
+                </li>
+                <!-- user_menu -->
+                <li class="nav-item d-flex align-items-center">
+                    <div class="usermenu"><span class="login">You are currently using guest access (<a href="https://school.demo.moodle.net/login/index.php">Log in</a>)</span></div>
+                </li>
+            </ul>
+            <!-- search_box -->
+    </nav>
+
+
+    <div id="page" class="container-fluid">
+        <header id="page-header" class="row">
+    <div class="col-12 pt-3 pb-3">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex">
+                    <div class="mr-auto">
+                    <div class="page-context-header"><div class="page-header-headings"><h1>Mount Orange School</h1></div></div>
+                    </div>
+
+                </div>
+                <div class="d-flex flex-wrap">
+                    <div class="ml-auto d-flex">
+
+                    </div>
+                    <div id="course-header">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div id="page-content" class="row">
+            <div id="region-main-box" class="col-12">
+                <section id="region-main" >
+                    <div class="card">
+                        <div class="card-body">
+                            <span class="notifications" id="user-notifications"></span>
+                            <div role="main"><span id="maincontent"></span><div class="box generalbox sitetopic py-3"><div class="no-overflow"><div class="frontpage">
+  <div class="jumbotron jumbotron-fluid" style="background-image: url('https://school.demo.moodle.net/pluginfile.php/1345/mod_resource/content/1/students-studying-in-classroom-with-digital-devices-1680.jpg');">
+    <div class="container-fluid">
+      <div class="texts">
+        <h2>Mount Orange School</h2>
+        <p class="lead">Try Moodle in a real-school environment with ready-made accounts</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="fp-block col-lg">
+        <h3>See Moodle in action</h3>
+        <p>This demonstration site gives you the opportunity to explore Moodle in action as a <a href="http://school.demo.moodle.net/mod/page/view.php?id=47"><u><span style="background: transparent">manager</span></u></a>, <a href="http://school.demo.moodle.net/mod/page/view.php?id=45"><u><span style="background: transparent">teacher</span></u></a>, <a href="http://school.demo.moodle.net/mod/page/view.php?id=46"><u><span style="background: transparent">student</span></u></a>,&nbsp;<u><span style="background: transparent"><a href="http://school.demo.moodle.net/mod/page/view.php?id=48">parent</a></span></u>&nbsp;or <a href="https://school.demo.moodle.net/mod/page/view.php?id=811"><u>privacy officer.</u></a> See how students are assessed and learning tracked in a variety of activities with realistic user content.</p>
+        <p class="button"><a class="btn btn-primary" href="http://school.demo.moodle.net/mod/page/view.php?id=44">Choose a role »</a></p>
+      </div>
+      <div class="fp-block col-lg">
+        <h3>About Mount Orange</h3>
+        <p>Mount Orange School provides high quality education for students aged from 8 to 18 years, making full use of the open source learning platform Moodle. The courses are open to guests and showcase Moodle features, highlighting the enhancements each new version brings.</p>
+        <p class="button"><a class="btn btn-primary" href="http://school.demo.moodle.net/course/index.php">Go to courses »</a></p>
+      </div>
+    </div>
+  </div>
+</div></div><ul class="section img-text"></ul></div><br /></div>
+
+
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    <div id="nav-drawer" data-region="drawer" class="d-print-none moodle-has-zindex " aria-hidden="false" tabindex="-1">
+        <nav class="list-group">
+            <a class="list-group-item list-group-item-action active" href="https://school.demo.moodle.net/" data-key="home" data-isexpandable="0" data-indent="0" data-showdivider="0" data-type="1" data-nodetype="1" data-collapse="0" data-forceopen="1" data-isactive="1" data-hidden="0" data-preceedwithhr="0" >
+                <div class="m-l-0">
+                    <div class="media">
+                        <span class="media-left">
+                            <i class="icon fa fa-home fa-fw " aria-hidden="true"  aria-label=""></i>
+                        </span>
+                        <span class="media-body font-weight-bold">Home</span>
+                    </div>
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://school.demo.moodle.net/calendar/view.php?view=month" data-key="calendar" data-isexpandable="0" data-indent="0" data-showdivider="0" data-type="60" data-nodetype="0" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="1">
+                <div class="m-l-0">
+                    <div class="media">
+                        <span class="media-left">
+                            <i class="icon fa fa-calendar fa-fw " aria-hidden="true"  aria-label=""></i>
+                        </span>
+                        <span class="media-body ">Calendar</span>
+                    </div>
+                </div>
+            </a>
+        </nav>
+    </div>
+</div>
+
+<footer id="page-footer" class="py-3 bg-dark text-light">
+    <div class="container">
+        <div id="course-footer"></div>
+
+
+        <div class="logininfo">You are currently using guest access (<a href="https://school.demo.moodle.net/login/index.php">Log in</a>)</div>
+        <div class="tool_usertours-resettourcontainer"></div>
+        <div class="sitelink"><a title="Moodle" href="http://moodle.org/"><img src="https://school.demo.moodle.net/theme/image.php/boost/core/1540332075/moodlelogo" alt="Moodle logo" /></a></div>
+        <nav class="nav navbar-nav d-md-none">
+                <ul class="list-unstyled pt-3">
+                                    <li><a href="#" title="Language">English ‎(en)‎</a></li>
+                                <li>
+                                    <ul class="list-unstyled ml-3">
+                                                            <li><a href="https://school.demo.moodle.net/?lang=en_us" title="English - United States ‎(en_us)‎">English - United States ‎(en_us)‎</a></li>
+                                                        <li><a href="https://school.demo.moodle.net/?lang=en" title="English ‎(en)‎">English ‎(en)‎</a></li>
+                                                        <li><a href="https://school.demo.moodle.net/?lang=es_mx" title="English ‎(es_mx)‎">English ‎(es_mx)‎</a></li>
+                          </ul>
+                                </li>
+                </ul>
+        </nav>
+        <a href="https://download.moodle.org/mobile?version=2018051702&amp;lang=en&amp;iosappid=633359593&amp;androidappid=com.moodle.moodlemobile">Get the mobile app</a><div class="policiesfooter"><a href="https://school.demo.moodle.net/admin/tool/policy/viewall.php?returnurl=https%3A%2F%2Fschool.demo.moodle.net%2F">Policies</a></div>
+
+<div id="resetcountdown" style="padding:3px 1em;text-aling:center;position:fixed;bottom:0;right:0;overflow: hidden;" />
+
+<script>
+Y.use('node', function (Y) {
+
+    // The number of seconds after the whole hour we want to count down to.
+    var countdown = 3600;
+
+    var updateTimer = function () {
+        var now = Math.floor(new Date().getTime() / 1000),
+            last = now - (now % countdown),
+            next = last + countdown;
+
+        displayRemainingTime(next - now);
+
+        setTimeout(updateTimer, 1000);
+    };
+
+    var displayRemainingTime = function (seconds) {
+        var timer = Y.one('#resetcountdown'),
+            display, hours, mins, secs,
+            text = 'This site will be reset in ';
+
+        display = new Date(1970, 0, 1);
+        display.setSeconds(seconds);
+
+        secs = display.getSeconds();
+        mins = display.getMinutes();
+        hours = Math.floor((seconds - mins * 3600 - secs * 60) / 60 / 60);
+
+        if (hours > 0) {
+            text += ('0' + hours).slice(-2) + ' hours ';
+        }
+
+        text += ('0' + mins).slice(-2) + ' mins ' + ('0' + secs).slice(-2) + ' secs';
+
+        timer.set('text', text);
+
+        if (seconds < 300) {
+            timer.setStyle('backgroundColor', 'red')
+                 .setStyle('fontWeight', 'bold');
+        } else {
+            timer.setStyle('backgroundColor', '#ffd3d9')
+                 .setStyle('fontWeight', 'normal');
+        }
+    };
+
+    updateTimer();
+});
+</script><script type="text/javascript">
+//<![CDATA[
+var require = {
+    baseUrl : 'https://school.demo.moodle.net/lib/requirejs.php/1540332075/',
+    // We only support AMD modules with an explicit define() statement.
+    enforceDefine: true,
+    skipDataMain: true,
+    waitSeconds : 0,
+
+    paths: {
+        jquery: 'https://school.demo.moodle.net/lib/javascript.php/1540332075/lib/jquery/jquery-3.2.1.min',
+        jqueryui: 'https://school.demo.moodle.net/lib/javascript.php/1540332075/lib/jquery/ui-1.12.1/jquery-ui.min',
+        jqueryprivate: 'https://school.demo.moodle.net/lib/javascript.php/1540332075/lib/requirejs/jquery-private'
+    },
+
+    // Custom jquery config map.
+    map: {
+      // '*' means all modules will get 'jqueryprivate'
+      // for their 'jquery' dependency.
+      '*': { jquery: 'jqueryprivate' },
+      // Stub module for 'process'. This is a workaround for a bug in MathJax (see MDL-60458).
+      '*': { process: 'core/first' },
+
+      // 'jquery-private' wants the real jQuery module
+      // though. If this line was not here, there would
+      // be an unresolvable cyclic dependency.
+      jqueryprivate: { jquery: 'jquery' }
+    }
+};
+
+//]]>
+</script>
+<script type="text/javascript" src="https://school.demo.moodle.net/lib/javascript.php/1540332075/lib/requirejs/require.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+require(['core/first'], function() {
+;
+require(["media_videojs/loader"], function(loader) {
+    loader.setUp(function(videojs) {
+        videojs.options.flash.swf = "https://school.demo.moodle.net/media/player/videojs/videojs/video-js.swf";
+videojs.addLanguage("en",{
+ "Audio Player": "Audio Player",
+ "Video Player": "Video Player",
+ "Play": "Play",
+ "Pause": "Pause",
+ "Replay": "Replay",
+ "Current Time": "Current Time",
+ "Duration Time": "Duration Time",
+ "Remaining Time": "Remaining Time",
+ "Stream Type": "Stream Type",
+ "LIVE": "LIVE",
+ "Loaded": "Loaded",
+ "Progress": "Progress",
+ "Progress Bar": "Progress Bar",
+ "progress bar timing: currentTime={1} duration={2}": "{1} of {2}",
+ "Fullscreen": "Fullscreen",
+ "Non-Fullscreen": "Non-Fullscreen",
+ "Mute": "Mute",
+ "Unmute": "Unmute",
+ "Playback Rate": "Playback Rate",
+ "Subtitles": "Subtitles",
+ "subtitles off": "subtitles off",
+ "Captions": "Captions",
+ "captions off": "captions off",
+ "Chapters": "Chapters",
+ "Descriptions": "Descriptions",
+ "descriptions off": "descriptions off",
+ "Audio Track": "Audio Track",
+ "Volume Level": "Volume Level",
+ "You aborted the media playback": "You aborted the media playback",
+ "A network error caused the media download to fail part-way.": "A network error caused the media download to fail part-way.",
+ "The media could not be loaded, either because the server or network failed or because the format is not supported.": "The media could not be loaded, either because the server or network failed or because the format is not supported.",
+ "The media playback was aborted due to a corruption problem or because the media used features your browser did not support.": "The media playback was aborted due to a corruption problem or because the media used features your browser did not support.",
+ "No compatible source was found for this media.": "No compatible source was found for this media.",
+ "The media is encrypted and we do not have the keys to decrypt it.": "The media is encrypted and we do not have the keys to decrypt it.",
+ "Play Video": "Play Video",
+ "Close": "Close",
+ "Close Modal Dialog": "Close Modal Dialog",
+ "Modal Window": "Modal Window",
+ "This is a modal window": "This is a modal window",
+ "This modal can be closed by pressing the Escape key or activating the close button.": "This modal can be closed by pressing the Escape key or activating the close button.",
+ ", opens captions settings dialog": ", opens captions settings dialog",
+ ", opens subtitles settings dialog": ", opens subtitles settings dialog",
+ ", opens descriptions settings dialog": ", opens descriptions settings dialog",
+ ", selected": ", selected",
+ "captions settings": "captions settings",
+ "subtitles settings": "subititles settings",
+ "descriptions settings": "descriptions settings",
+ "Text": "Text",
+ "White": "White",
+ "Black": "Black",
+ "Red": "Red",
+ "Green": "Green",
+ "Blue": "Blue",
+ "Yellow": "Yellow",
+ "Magenta": "Magenta",
+ "Cyan": "Cyan",
+ "Background": "Background",
+ "Window": "Window",
+ "Transparent": "Transparent",
+ "Semi-Transparent": "Semi-Transparent",
+ "Opaque": "Opaque",
+ "Font Size": "Font Size",
+ "Text Edge Style": "Text Edge Style",
+ "None": "None",
+ "Raised": "Raised",
+ "Depressed": "Depressed",
+ "Uniform": "Uniform",
+ "Dropshadow": "Dropshadow",
+ "Font Family": "Font Family",
+ "Proportional Sans-Serif": "Proportional Sans-Serif",
+ "Monospace Sans-Serif": "Monospace Sans-Serif",
+ "Proportional Serif": "Proportional Serif",
+ "Monospace Serif": "Monospace Serif",
+ "Casual": "Casual",
+ "Script": "Script",
+ "Small Caps": "Small Caps",
+ "Reset": "Reset",
+ "restore all settings to the default values": "restore all settings to the default values",
+ "Done": "Done",
+ "Caption Settings Dialog": "Caption Settings Dialog",
+ "Beginning of dialog window. Escape will cancel and close the window.": "Beginning of dialog window. Escape will cancel and close the window.",
+ "End of dialog window.": "End of dialog window."
+});
+
+    });
+});;
+
+
+require(['jquery', 'tool_policy/jquery-eu-cookie-law-popup', 'tool_policy/policyactions'], function($, Popup, ActionsMod) {
+        // Initialise the guest popup.
+        $(document).ready(function() {
+            // Only show message if there is some policy related to guests.
+                // Get localised messages.
+                var textmessage = "If you continue browsing this website, you agree to our policies:" +
+                   "<ul>" +
+                   "<li>" +
+                   "<a href=\"https://school.demo.moodle.net/admin/tool/policy/view.php?versionid=8&amp;returnurl=https%3A%2F%2Fschool.demo.moodle.net%2F\" " +
+                   "   data-action=\"view\" data-versionid=\"8\" data-behalfid=\"1\" >" +
+                   "Cookie statement" +
+                   "</a>" +
+                   "</li>" +
+                   "" +
+                   "<li>" +
+                   "<a href=\"https://school.demo.moodle.net/admin/tool/policy/view.php?versionid=12&amp;returnurl=https%3A%2F%2Fschool.demo.moodle.net%2F\" " +
+                   "   data-action=\"view\" data-versionid=\"12\" data-behalfid=\"1\" >" +
+                   "Privacy policy" +
+                   "</a>" +
+                   "</li>" +
+                   "" +
+                   "<li>" +
+                   "<a href=\"https://school.demo.moodle.net/admin/tool/policy/view.php?versionid=7&amp;returnurl=https%3A%2F%2Fschool.demo.moodle.net%2F\" " +
+                   "   data-action=\"view\" data-versionid=\"7\" data-behalfid=\"1\" >" +
+                   "Rules for guests" +
+                   "</a>" +
+                   "</li>" +
+                   "" +
+                   "</ul>";
+                var continuemessage = "Continue";
+
+                // Initialize popup.
+                $(document.body).addClass('eupopup');
+                if ($(".eupopup").length > 0) {
+                    $(document).euCookieLawPopup().init({
+                        popupPosition: 'bottom',
+                        popupTitle: '',
+                        popupText: textmessage,
+                        buttonContinueTitle: continuemessage,
+                        buttonLearnmoreTitle: '',
+                        compactStyle: true,
+                    });
+                }
+
+            // Initialise the JS for the modal window which displays the policy versions.
+            ActionsMod.init();
+        });
+});
+
+;
+
+require(['jquery'], function($) {
+    $('#single_select5bcfae00f06943').change(function() {
+        var ignore = $(this).find(':selected').attr('data-ignore');
+        if (typeof ignore === typeof undefined) {
+            $('#single_select_f5bcfae00f06942').submit();
+        }
+    });
+});
+;
+require(["core/search-input"], function(amd) { amd.init("5bcfae00f252c"); });;
+
+require(['jquery'], function($) {
+    $('#single_select5bcfae00f06946').change(function() {
+        var ignore = $(this).find(':selected').attr('data-ignore');
+        if (typeof ignore === typeof undefined) {
+            $('#single_select_f5bcfae00f06945').submit();
+        }
+    });
+});
+;
+
+require(['theme_boost/loader']);
+require(['theme_boost/drawer'], function(mod) {
+    mod.init();
+});
+;
+require(["core/notification"], function(amd) { amd.init(2, []); });;
+require(["core/log"], function(amd) { amd.setConfig({"level":"trace"}); });
+});
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+M.str = {"moodle":{"lastmodified":"Last modified","name":"Name","error":"Error","info":"Information","yes":"Yes","no":"No","ok":"OK","cancel":"Cancel","confirm":"Confirm","areyousure":"Are you sure?","closebuttontitle":"Close","unknownerror":"Unknown error"},"repository":{"type":"Type","size":"Size","invalidjson":"Invalid JSON string","nofilesattached":"No files attached","filepicker":"File picker","logout":"Logout","nofilesavailable":"No files available","norepositoriesavailable":"Sorry, none of your current repositories can return files in the required format.","fileexistsdialogheader":"File exists","fileexistsdialog_editor":"A file with that name has already been attached to the text you are editing.","fileexistsdialog_filemanager":"A file with that name has already been attached","renameto":"Rename to \"{$a}\"","referencesexist":"There are {$a} alias\/shortcut files that use this file as their source","select":"Select"},"admin":{"confirmdeletecomments":"You are about to delete comments, are you sure?","confirmation":"Confirmation"}};
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+(function() {Y.use("moodle-filter_mathjaxloader-loader",function() {M.filter_mathjaxloader.configure({"mathjaxconfig":"\nMathJax.Hub.Config({\n    config: [\"Accessible.js\", \"Safe.js\"],\n    errorSettings: { message: [\"!\"] },\n    skipStartupTypeset: true,\n    messageStyle: \"none\"\n});\n","lang":"en"});
+});
+Y.use("moodle-filter_glossary-autolinker",function() {M.filter_glossary.init_filter_autolinking({"courseid":0});
+});
+M.util.help_popups.setup(Y);
+ M.util.js_pending('random5bcfae00f06947'); Y.on('domready', function() { M.util.js_complete("init");  M.util.js_complete('random5bcfae00f06947'); });
+})();
+//]]>
+</script>
+
+    </div>
+</footer>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"e7ecaf3e4a","applicationID":"161943228","transactionName":"NAAGMhNSDxBTBUUPDA1KMRQIHAgNVgNJSBMLFQ==","queueTime":0,"applicationTime":156,"atts":"GEcFRFtIHB4=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
