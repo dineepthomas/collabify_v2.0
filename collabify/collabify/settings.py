@@ -120,11 +120,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "scripts/static"),os.path.join(BASE_DIR, "scripts/static/css"),os.path.join(BASE_DIR, "scripts/static/css/images"),
+    os.path.join(BASE_DIR, "scripts/static"),os.path.join(BASE_DIR, "scripts/static/css"),os.path.join(BASE_DIR, "scripts/static/images"),
 ]
 
 LOGIN_URL = '/login'
 LOGOUT_URL = '/logout'
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/dashboard'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

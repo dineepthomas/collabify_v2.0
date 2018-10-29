@@ -19,10 +19,12 @@ from scripts.forms import SignUpForm
 from scripts.tokens import account_activation_token
 from django.contrib import messages
 
-@login_required
 def home(request):
     return render(request, 'home.html')
 
+@login_required
+def dashboard(request):
+    return render(request, 'dashboard.html')
 
 def signup(request):
     if request.method == 'POST':
@@ -64,7 +66,7 @@ def activate(request, uidb64, token):
         user.profile.email_confirmed = True
         user.save()
         login(request, user)
-        return redirect('home')
+        return redirect('dashboard')
     else:
         return render(request, 'account_activation_invalid.html')
 
