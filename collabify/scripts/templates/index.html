@@ -10,8 +10,8 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-
-  <link rel = "stylesheet" href="styles.css">
+  {% load static %}
+  <link href="{% static 'css/styles.css' %}" rel="stylesheet">
   </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
@@ -23,8 +23,12 @@
     </div>
     <div>
       <div style = "float:right; padding:5px;">
-          <button type = "button" style = "background-color: #435F65; margin: 2px; font-family: 'Exo 2', sans-serif;" class ="btn btn-primary">Login</button>
-          <button type = "button" style = "background-color: #435F65; margin: 2px; font-family: 'Exo 2', sans-serif;" class ="btn btn-primary">Signup</button>
+          <form method="get" action="/login">
+          <button type = "submit" style = "background-color: #435F65; margin: 2px; font-family: 'Exo 2', sans-serif;" class ="btn btn-primary">Login</button>
+        </form>
+            <form method="get" action="/signup">
+          <button type = "submit" style = "background-color: #435F65; margin: 2px; font-family: 'Exo 2', sans-serif;" class ="btn btn-primary">Signup</button>
+        </form>
       </div>
     </div>
     </div>
