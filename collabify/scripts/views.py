@@ -2,12 +2,12 @@ from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib.sites.shortcuts import get_current_site
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect,render_to_response
 from django.utils.encoding import force_bytes, force_text
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.template.loader import render_to_string
 from django.contrib.auth.forms import UserChangeForm, PasswordChangeForm
-
+from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import update_session_auth_hash # to make sure after password reset user name comes instead of
                                         # anonymous username. so this basically saves our session!!
 
@@ -20,11 +20,15 @@ from scripts.tokens import account_activation_token
 from django.contrib import messages
 
 def home(request):
-    return render(request, 'home.html')
+    return render(request, 'index.html')
 
 @login_required
 def dashboard(request):
-    return render(request, 'dashboard.html')
+    form = UserCreationForm()
+    c = {'form': form}
+    return render_to_response("dashboard.html", c)
+
+    # return render(request, 'dashboard.html')
 
 def signup(request):
     if request.method == 'POST':
