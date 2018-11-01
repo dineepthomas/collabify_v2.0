@@ -18,6 +18,7 @@ from django.contrib.auth.decorators import login_required # to prevent sites to 
 from scripts.forms import SignUpForm
 from scripts.tokens import account_activation_token
 from django.contrib import messages
+from django.views.generic import TemplateView
 
 def home(request):
     return render(request, 'index.html')
