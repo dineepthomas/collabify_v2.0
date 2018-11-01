@@ -10,13 +10,8 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-<<<<<<< HEAD
-
-  <link rel = "stylesheet" href="../static/css/styles.css">
-=======
   {% load static %}
   <link href="{% static 'css/styles.css' %}" rel="stylesheet">
->>>>>>> 3a6ceeadd49e837ea76657f180a02bab84defd64
   </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
@@ -28,17 +23,12 @@
     </div>
     <div>
       <div style = "float:right; padding:5px;">
-<<<<<<< HEAD
-          <a class="btn btn-primary" href="{% url 'login' %}" style = "background-color: #435F65;">Login</a>
-          <a class="btn btn-primary" href="{% url 'signup' %}" style = "background-color: #435F65;">Signup</a>
-=======
           <form method="get" action="/login">
           <button type = "submit" style = "background-color: #435F65; margin: 2px; font-family: 'Exo 2', sans-serif;" class ="btn btn-primary">Login</button>
         </form>
             <form method="get" action="/signup">
           <button type = "submit" style = "background-color: #435F65; margin: 2px; font-family: 'Exo 2', sans-serif;" class ="btn btn-primary">Signup</button>
         </form>
->>>>>>> 3a6ceeadd49e837ea76657f180a02bab84defd64
       </div>
     </div>
     </div>
@@ -82,5 +72,10 @@
     <p><strong><i class="far fa-copyright"></i> Collabify 2018</strong></p>
 </div>
 </div>
+
+
+
+
+
 </body>
 </html>

@@ -26,7 +26,7 @@ def home(request):
 def dashboard(request):
     form = UserCreationForm()
     c = {'form': form}
-    return render_to_response("dashboard.html", c)
+    return render_to_response("dashboard.html", {'name': request.user.username})
 
     # return render(request, 'dashboard.html')
 
