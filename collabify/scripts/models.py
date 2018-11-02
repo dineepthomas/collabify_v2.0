@@ -4,25 +4,25 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
-
-class Team(models.model):
+from django.utils import timezone
+class Team(models.Model):
     team_name = models.CharField(max_length = 500, unique = True)
     team_description = models.TextField(max_length = 1024)
     team_logo = models.ImageField()
-    team_members = models.ManyToManyField(User, through = 'Team_Member')
+    # team_members = models.ManyToManyField(User, through = 'Team_Member')
     team_create_date = models.DateTimeField(default = timezone.now)
     team_create_time = models.TimeField()
 
-class Team_Member(models.model):
+class Team_Member(models.Model):
     team_member_name = models.CharField(max_length = 500, unique = True)
     team_member_attendance = models.PositiveSmallIntegerField()
     team_member_contribution_percentage = models.PositiveSmallIntegerField()
 
-class Team_Board(models.model):
+class Team_Board(models.Model):
     team_board_name = models.CharField(max_length = 1024, unique = True)
     team_board_description = models.CharField(max_length = 1024)
-    team_board_contributors = models.ManyToManyField(User, through = 'Team_Member')
-    team_board_cards = models.ForeignKey()
+    # team_board_contributors = models.ManyToManyField(User, through = 'Team_Member')
+    # team_board_cards = models.ForeignKey()
     team_board_completion = models.PositiveSmallIntegerField()
 
 class Profile(models.Model):
