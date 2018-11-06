@@ -11,8 +11,142 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     {% load static %}
-    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+
+<!--JavaScript file for all things task-->
+<script src="js/tasks.js"></script>
+
+<!-- Drag and Drop Scripts -->
+<script>
+
+function show_hide(id) {
+  var deletionCheck = id.slice(0,1);
+
+  if(deletionCheck == "d"){
+    var parsedShowID = id.slice(5);
+    console.log(parsedShowID);
+  } else {
+    var parsedShowID = id.slice(5);
+    console.log(parsedShowID);
+
+  }  
+    
+  dv = document.getElementById("collapse" + parsedShowID);
+  ele = document.getElementById(id);
+
+  if (dv.style.display ==  '')
+    { 
+      dv.style.display = 'none'; 
+      ele.innerHTML = "Show";
+    }
+    else
+    {
+      dv.style.display = ''; 
+      ele.innerHTML = "Hide";
+    }
+}
+
+
+//task movability functions
+
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+}
+
+
+</script>
+
+
+<!--This style affects the board itself. We need to update this so that the different columns do not stack up on each other when the screen gets small. I also added in a fourth column so I might need to edit the size of each column-->
+<style>
+    /* divCategory affects the columns of the board */
+    .divCatagory{
+        width: 350px;
+        height: auto;
+        padding: 10px;
+        padding-bottom: 50px;
+        float: left;
+        border: 1px solid black;
+    }
+
+    /* There are two #cloneheres, need to figure out which one is used */
+    #clonehere{
+        width: 350px;
+        height: 500px;
+        padding: 10px;
+        float: left;
+    }
+    .divCatagoryHead{
+        width: 350px;
+        height: 20px;
+        background-color: black;
+        display: block;
+    }
+    .divCatagoryHeadParagraph{
+        text-align: center;
+        vertical-align: middle;
+        color: white
+    }
+    .task{
+        background-color: red;
+
+        width: 350px;
+        height: 50px;
+    }
+    .taskName{
+      padding-top: 4px;
+      padding-bottom: 3px;
+    }
+    .percentageBar{
+      padding-top: 3px;
+    }
+    #clonehere{
+      width: 350px;
+      height: 200px;
+    }
+
+</style>
+
 </head>
 <body>
   
+<div class="container">
+
+<div style="width:100%; overflow: hidden;">	
+	<div class="divCatagory" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <div class="container bg-warning rounded">
+            <p class="divCatagoryHeadParagraph"><strong>BackLog</strong></p>
+        </div>
+    </div>
+    <div class="divCatagory" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <div class="container bg-info rounded">
+            <p class="divCatagoryHeadParagraph"><strong>Today</strong></p>
+        </div>
+    </div>
+	<div class="divCatagory" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <div class="container bg-info rounded">
+            <p class="divCatagoryHeadParagraph"><strong>In Progress</strong></p>
+        </div>
+    </div>
+	<div class="divCatagory" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <div class="container bg-success rounded">
+            <p class="divCatagoryHeadParagraph"><strong>Finished</strong></p>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+
+
 </body>

@@ -1,3 +1,12 @@
+
+//not really sure if this is necessary
+function HighPrioTaskMachine(id){
+	$( "#dragH0" ).clone()
+		.attr("id", id)
+		.css({"display": "block"})
+		.appendTo( "#clonehere");
+}
+
 //task variables
 var task ={
   name: "taskName",
