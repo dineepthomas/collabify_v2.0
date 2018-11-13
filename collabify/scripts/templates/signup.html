@@ -1,21 +1,37 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h2>Sign up</h2>
-  <form method="post">
-    {% csrf_token %}
-    {% for field in form %}
-      <p>
-        {{ field.label_tag }}<br>
-        {{ field }}
-        <!-- {% if field.help_text %}
-          <small style="color: grey">{{ field.help_text }}</small>
-        {% endif %} -->
-        {% for error in field.errors %}
-          <p style="color: red">{{ error }}</p>
-        {% endfor %}
-      </p>
-    {% endfor %}
-    <button type="submit">Sign up</button>
-  </form>
-{% endblock %}
+
+<div class = "container">
+  <div class="container" style=" background-color:#3C1053;  border-radius: 5px;">
+    <h2 class="card-header text-center" style="font-size: 40px; color: white;">Collabify</h2>
+      <div class="card-body">
+        <div class="container" style=" border-radius: 5px; padding: 10px; ">
+          <div class="container">
+
+            <form method="post">
+              {% csrf_token %}
+              {% for field in form %}
+
+               <p style="text-align: center;">
+                <font color="white" style=" size: 20px; font-family: 'Exo 2', sans-serif;">{{ field.label_tag }}</font><br>
+                <font color="black" style=" size: 20px; font-family: 'Exo 2', sans-serif;">{{ field }}</font>
+              </p> 
+
+              {% for error in field.errors %}
+                <p style="color:red">{{ error }}</p>
+              {% endfor %}
+              {% endfor %}
+              <hr>
+                <form method="get" action="/signup">
+                  <button class="btn btn-secondary btn-block" type="submit" style = "font-size: 16px; font-family: 'Exo 2', sans-serif;">Sign Up</button>
+                </form>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+
+{% endblock %} 
+
+
