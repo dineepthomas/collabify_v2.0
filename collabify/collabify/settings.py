@@ -120,7 +120,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "scripts/static"),os.path.join(BASE_DIR, "scripts/static/css"),os.path.join(BASE_DIR, "scripts/static/images"),
+    os.path.join(BASE_DIR, "scripts/static"),os.path.join(BASE_DIR, "scripts/static/css"),os.path.join(BASE_DIR, "scripts/static/js"),
+    os.path.join(BASE_DIR, "scripts/static/vendor"),
+    os.path.join(BASE_DIR, "scripts/static/images"),
 ]
 
 LOGIN_URL = '/login'

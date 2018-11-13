@@ -23,11 +23,14 @@ from django.views.generic import TemplateView
 def home(request):
     return render(request, 'index.html')
 
+def team(request):
+    return render(request, 'team_creation.html')
+
 @login_required
 def dashboard(request):
     form = UserCreationForm()
     c = {'form': form}
-    return render_to_response("dashboard.html", {'name': request.user.username})
+    return render_to_response("dashboard_2.html", {'name': request.user.username})
 
     # return render(request, 'dashboard.html')
 
