@@ -70,7 +70,7 @@
     }
 
     .topnav .login-container button:hover {
-      background-color: green;
+      background-color: purple;
     }
 
     @media screen and (max-width: 600px) {
@@ -81,9 +81,7 @@
         float: none;
         display: block;
         text-align: left;
-        width: 100%;
-        margin: 0;
-        padding: 14px;
+
       }
       .topnav input[type=text] {
         border: 1px solid #ccc;  
@@ -96,12 +94,14 @@
 
 <nav class="topnav navbar-fixed-top">
   <div class="container-fluid">
-      <a class="navbar-brand" href="#"><font color="white" style=" size: 20px; font-family: 'Exo 2', sans-serif;"><strong>Collabify : </strong>Create, Share, Collaborate </font></a>
+      <a class="navbar-brand"><font color="white" style=" size: 20px; font-family: 'Exo 2', sans-serif;"><strong>Collabify : </strong>Create, Share, Collaborate </font></a>
       
       <div class="login-container">
-        <form action="">
+
+        <form action="" method="post">
+          {% csrf_token %}
           <input type="text" placeholder="Username" name="username">
-          <input type="text" placeholder="Password" name="psw">
+          <input type="password" placeholder="Password" name="psw">
           <button type="submit">Log in</button>
         </form>
       </div>
@@ -130,23 +130,24 @@
 
 <div id="section1" class="container-fluid">
   <h1>Section 1</h1>
+</div>
 
-  </div>
 <div id="section2" class="container-fluid">
   <h1>Section 2</h1>
 </div>
+
 <div id="section3" class="container-fluid">
   <h1>Section 3</h1>
-
 </div>
+
 <div id="section41" class="container-fluid">
   <h1>Section 4 Submenu 1</h1>
-
 </div>
+
 <div id="section42" class="container-fluid">
   <h1>Section 4 Submenu 2</h1>
-
 </div>
+
 <div id="footer" class="container-fluid">
   <h1>Footer</h1>
     <p>About</p>
