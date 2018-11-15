@@ -5,6 +5,19 @@ from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.utils import timezone
+
+CATEGORIES = (
+    ('Alex', 'Alex'),
+    ('John', 'John'),
+    ('Peter', 'Peter'),
+    ('Rambo', 'Rambo'),
+    ('Jason', 'Jason'),
+    ('Eric', 'Eric'),
+    ('WLEE', 'Win Lee'),
+    ('Tabusu', 'Tabusu'),
+)
+
+
 class Team(models.Model):
     team_name = models.CharField(max_length = 500, unique = True)
     team_description = models.TextField(max_length = 1024)
@@ -31,6 +44,12 @@ class Profile(models.Model):
     location = models.CharField(max_length=30, blank=True)
     birth_date = models.DateField(null=True, blank=True)
     email_confirmed = models.BooleanField(default=False)
+
+class newTeam(models.Model):
+    team_name = models.CharField(max_length=100)
+    team_description = models.TextField(max_length=300)
+    team_member = models.CharField(max_length=5, choices=CATEGORIES)
+    dateofcreation = models.DateTimeField(default = timezone.now)
 
 
 
