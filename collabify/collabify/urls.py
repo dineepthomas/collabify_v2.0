@@ -24,6 +24,7 @@ urlpatterns = [
     url(r'^$', core_views.home, name='index'),
     url(r'^dashboard$', core_views.dashboard, name='dashboard'),
     url(r'^team$', core_views.test1.as_view(), name='team'),
+    url(r'^attendance$', core_views.attendance, name='attendance'),
     url(r'^login/$', auth_views.login, {'template_name': 'login.html'}, name='login'),
     url(r'^logout/$', auth_views.logout, {'next_page': 'login'}, name='logout'),
     url(r'^signup/$', core_views.signup, name='signup'),
