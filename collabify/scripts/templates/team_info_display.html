@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>4430 Team Setup</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
+
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/team_creation.css' %}">
+  <!-- <script type="text/javascript" src = "{% static 'js/team_creation.css' %}"></script> -->
+  <script type="text/javascript" src = "{% static 'vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+  <script type="text/javascript" src = "{% static 'vendor/animsition/js/animsition.min.js' %}"></script>
+  <script type="text/javascript" src = "{% static 'vendor/bootstrap/js/popper.js' %}"></script>
+  <script type="text/javascript" src = "{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+  <script type="text/javascript" src = "{% static 'vendor/select2/select2.min.js' %}"></script>
+  <script type="text/javascript" src = "{% static 'vendor/daterangepicker/moment.min.js' %}"></script>
+  <script type="text/javascript" src = "{% static 'vendor/daterangepicker/daterangepicker.js' %}"></script>
+  <script type="text/javascript" src = "{% static 'js/main.js' %}"></script>
+
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+<!--===============================================================================================-->
+	<!-- <link rel="stylesheet" type="text/css" href="{% static 'fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}"> -->
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/animate/animate.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/css-hamburgers/hamburgers.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/animsition/css/animsition.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/select2/select2.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/daterangepicker/daterangepicker.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/utils.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+<!--===============================================================================================-->
+</head>
+<body>
+<div class="container">
+<h2>hello team {{ text }}</h2>
+<br>
+<h3>Team Description {{ team_des }}</h3>
+<br>
+{% for i in team_list %}
+<p>hello memeber {{ i }}</p>
+{% endfor %}
+</div>
+</body>
+
+</html>

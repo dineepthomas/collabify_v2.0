@@ -10,15 +10,14 @@ from django.contrib.auth.forms import UserChangeForm, PasswordChangeForm
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import update_session_auth_hash # to make sure after password reset user name comes instead of
                                         # anonymous username. so this basically saves our session!!
-
 from django.contrib.auth.decorators import login_required # to prevent sites to be accessed based on url. only if logged
                                         # in then show the page or else don't.
-
-
-from scripts.forms import SignUpForm
+from scripts.forms import SignUpForm,PostteamForm
+from scripts.models import newTeam
 from scripts.tokens import account_activation_token
 from django.contrib import messages
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView,FormView
+from django.http import HttpResponse
 
 def home(request):
     return render(request, 'index.html')
@@ -26,7 +25,41 @@ def home(request):
 def team(request):
     return render(request, 'team_creation.html')
 
+
+class test1(TemplateView):
+    print("test1 called")
+    template_name = 'post_team_info.html'
+
+    def get(self,request):
+        print("test1 get called")
+        form = PostteamForm()
+        return render(request,self.template_name,{'form':form})
+
+    def post(self,request):
+        print("test1 post called")
+        form = PostteamForm(request.POST)
+        args ={}
+        if form.is_valid():
+            print("test1 form valid called")
+            text = form.cleaned_data['team_name']
+            team_des = form.cleaned_data['team_description']
+            team_list = form.cleaned_data['team_member']
+            print(text)
+            print(team_des)
+            print(team_list)
+            args = {'text':text,'team_des':team_des,'team_list':team_list}
+            form = PostteamForm()
+
+        return render(request,'team_info_display.html',args )
+
+
+
+
+def attendance(request):
+    return render(request, 'attendance_QR_Code.html')
+
 @login_required
+
 def dashboard(request):
     form = UserCreationForm()
     c = {'form': form}
