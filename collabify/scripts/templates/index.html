@@ -10,6 +10,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
   {% load static %}
   <link href="{% static 'css/styles.css' %}" rel="stylesheet">
   </head>
@@ -17,55 +18,53 @@
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
+  <div class="container-fluid"style="background-color:#000000;">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#"><font color="white" style=" size: 20px; font-family: 'Exo 2', sans-serif;"><strong>Collabify : </strong>Create, Share, Collaborate </font></a>
+      <a class="navbar-brand" href="#" style="background-color:#000000;"><font color="white" style=" size: 20px; font-family: 'Exo 2', sans-serif;"><strong>Collabify </strong></font>
+        <font style="font-size:22px;font-family:'Pacifico', cursive; color:white; padding-left:10px;">for</font>
+      </a>
+      <img src = "../static/images/index_4.png" class="img-responsive" height="100" width="100" style="padding-top:10px;"><br>
     </div>
     <div>
-
        <div style = "float:right; padding:5px;">
         <form method="get" action="/login">
-          <button type = "submit" style = "background-color: #435F65; margin: 2px; font-family: 'Exo 2', sans-serif;" class ="btn btn-primary">Login</button>
+          <button type = "submit" style = "border-radius:5px;background-color:#3C3A3A;border-color: #6E6868;margin: 2px; font-family: 'Exo 2', sans-serif;" class ="btn btn-primary">Login</button>
         </form>
       </div>
 
       <div style = "float:right; padding:5px;">
         <form method="get" action="/signup">
-          <button type = "submit" style = "background-color: #435F65; margin: 2px; font-family: 'Exo 2', sans-serif;" class ="btn btn-primary">Signup</button>
+          <button type = "submit" style = "border-radius:5px;background-color:#3C3A3A;border-color: #6E6868; margin: 2px; font-family: 'Exo 2', sans-serif;" class ="btn btn-primary">Signup</button>
         </form>
       </div>
     </div>
     </div>
 </nav>
-<br><br>
+<br><br><br>
+<hr>
 
-<div style="padding-top:5px; text-align:center;">
+<div style="text-align:right;">
 
 <!--<div class = "container-fluid" id = "Section_1" style = "background-color:#461D7C; border-radius:5px; color:white;">-->
 
 <div id="section1" class="container-fluid">
-  <h1>Section 1</h1>
-  
-  
+  <h1>"Alone we can do so little; together we can do so much."</h1>
+  <h3>-Helen Keller</h3>
+  <p>Here at collabify we celebrate team work that's why we designed our software to help our peers at LSU work together and focus on the project rather than finding the right tools to collaborate.</p>
+  <img src = "../static/images/index_2.png" class="img-responsive">
+</div>
 
-  </div>
+<br><hr>
+
 <div id="section2" class="container-fluid">
-  <h1>Section 2</h1>
+  <h1>Placeholder</h1>
+  <p>Text goes here here here here here here here here here here.....</p>
+  <img src = "../static/images/index_3.png" class="img-responsive">
 </div>
-<div id="section3" class="container-fluid">
-  <h1>Section 3</h1>
 
-</div>
-<div id="section41" class="container-fluid">
-  <h1>Section 4 Submenu 1</h1>
+<br>
 
-</div>
-<div id="section42" class="container-fluid">
-  <h1>Section 4 Submenu 2</h1>
-
-</div>
 <div id="footer" class="container-fluid">
-  <h1>Footer</h1>
     <p>About</p>
     <p>Contact</p>
     <p>Feedback</p>

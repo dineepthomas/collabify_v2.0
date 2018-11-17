@@ -5,16 +5,37 @@ body
   font-size: medium;
   position: relative;
 }
-a:hover{
-  background-color: #1E88E5;
-
+.button {
+  font: bold 11px Arial;
+  text-decoration: none;
+  background-color: #EEEEEE;
+  color: #333333;
+  padding: 2px 6px 2px 6px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
 }
-  #section1 {padding-top:50px;height:500px;background-image: url("home/vmalar/collabify_v2.0_4330/collabify_v2.0/collabify/scripts/static/images/index_1.png");}
-  #section2 {padding-top:50px;height:500px;color: #fff; background-color: #673ab7;}
-  #section3 {padding-top:50px;height:500px;color: #fff; background-color: #ff9800;}
-  #section41 {padding-top:50px;height:500px;color: #fff; background-color: #00bcd4;}
-  #section42 {padding-top:50px;height:500px;color: #fff; background-color: #009688;}
+
+  #section1 {
+    padding-top:0px;height:700px;color:black; background-color: white;
+
+  }
+  #section2 {
+    padding-top:0px;height:700px;color: black; background-color: white;
+  }
   #footer{
-    padding-top:50px;height:400px;color: #fff; background-color:#000000;
+    padding-top:50px;height:300px;color:#fff; background-color:#000000;
+  }
+  .btnLink {
+    color: #900;
+    background: #FF0;
+    font-weight: bold;
+    border: 1px solid #900;
+  }
+
+  .btnLink:hover {
+    color: #FFF;
+    background: #900;
   }
 display:inline-block;
