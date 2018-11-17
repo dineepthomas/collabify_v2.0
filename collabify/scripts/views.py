@@ -58,6 +58,9 @@ class test1(TemplateView):
 def attendance(request):
     return render(request, 'attendance_QR_Code.html')
 
+def board(request):
+    return render(request, 'board.html')
+
 @login_required
 
 def dashboard(request):
