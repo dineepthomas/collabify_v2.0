@@ -18,6 +18,9 @@ from scripts.tokens import account_activation_token
 from django.contrib import messages
 from django.views.generic import TemplateView,FormView
 from django.http import HttpResponse
+import logging
+from django.contrib.auth.signals import user_logged_in, user_logged_out, user_login_failed
+from django.dispatch import receiver
 
 def home(request):
     return render(request, 'index.html')
@@ -52,6 +55,25 @@ class test1(TemplateView):
 
         return render(request,'team_info_display.html',args )
 
+def attend_custom(request):
+    if request.method == 'POST':
+        form = attendanceForm(request.POST)
+        if form.is_valid():
+            user = form.save(commit=False)
+            user.is_active = False
+            user.save()
+
+            current_site = get_current_site(request)
+            subject = 'Activate Your MySite Account'
+            message = render_to_string('account_activation_email.html', {
+                'user': user,
+                'domain': current_site.domain,
+                'uid': force_text(urlsafe_base64_encode(force_bytes(user.pk))),
+                'token': account_activation_token.make_token(user),
+            })
+            user.email_user(subject, message)
+
+            return redirect('account_activation_sent')
 
 
 
@@ -62,7 +84,6 @@ def board(request):
     return render(request, 'board.html')
 
 @login_required
-
 def dashboard(request):
     form = UserCreationForm()
     c = {'form': form}
@@ -130,3 +151,31 @@ def activate(request, uidb64, token):
 #     return render(request, 'change_password.html', {
 #         'form': form
 #     })
+
+log = logging.getLogger(__name__)
+
+@receiver(user_logged_in)
+def user_logged_in_callback(sender, request, user, **kwargs):
+    ip = request.META.get('REMOTE_ADDR')
+    log.info('login user: {user} via ip: {ip}'.format(
+        user=user,
+        ip=ip
+    ))
+user_logged_in.connect(user_logged_in_callback)
+
+@receiver(user_logged_out)
+def user_logged_out_callback(sender, request, user, **kwargs):
+    ip = request.META.get('REMOTE_ADDR')
+
+    log.info('logout user: {user} via ip: {ip}'.format(
+        user=user,
+        ip=ip
+    ))
+user_logged_out.connect(user_logged_out_callback)
+
+@receiver(user_login_failed)
+def user_login_failed_callback(sender,request, credentials, **kwargs):
+    log.warning('login failed with username: {credentials} from ip {ip}'.format(
+        credentials=credentials['username'],ip=request.META.get('REMOTE_ADDR')
+    ))
+user_login_failed.connect(user_login_failed_callback)

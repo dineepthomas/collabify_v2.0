@@ -51,6 +51,13 @@ class newTeam(models.Model):
     team_member = models.CharField(max_length=5, choices=CATEGORIES)
     dateofcreation = models.DateTimeField(default = timezone.now)
 
+class attendance(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    attendance = models.PositiveSmallIntegerField()
+    code = models.CharField(max_length=100)
+    ip_address = models.GenericIPAddressField()
+    att_date = models.DateTimeField('date published')
+
 
 
 @receiver(post_save, sender=User)

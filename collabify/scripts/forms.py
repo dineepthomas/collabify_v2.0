@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from scripts.models import newTeam
+from scripts.models import newTeam,attendance
 
 CATEGORIES = (
     ('Alex', 'Alex'),
@@ -34,3 +34,10 @@ class PostteamForm(forms.ModelForm):
             'team_description': forms.TextInput(attrs={'placeholder': 'Team description'}),
 
         }
+
+class attendanceForm(forms.ModelForm):
+    code = forms.CharField(label='Your code', required=True)
+
+    class Meta:
+        model = attendance
+        fields = ('user','code','ip_address','att_date')
