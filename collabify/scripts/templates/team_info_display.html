@@ -39,8 +39,14 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
 <!--===============================================================================================-->
 </head>
+
 <body>
-<div class="container">
+	<div class="container">
+	<p> return to home page <a href="{% url 'dashboard' %}" style="color: rgb(0,255,0)">Home</a></p>
+	<br>
+	  {% if form.non_field_errors %}
+		<p> please select less then 3 members and try again </p>
+		{% else %}
 <h2>hello team {{ text }}</h2>
 <br>
 <h3>Team Description {{ team_des }}</h3>
@@ -48,6 +54,10 @@
 {% for i in team_list %}
 <p>hello memeber {{ i }}</p>
 {% endfor %}
+{% for field in form.visible_fields %}
+{{ field.errors }}<br/>
+{% endfor %}
+{% endif %}
 </div>
 </body>
 
