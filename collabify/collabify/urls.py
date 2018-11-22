@@ -23,7 +23,7 @@ from django.conf import settings
 urlpatterns = [
     url(r'^$', core_views.home, name='index'),
     url(r'^dashboard$', core_views.dashboard, name='dashboard'),
-    url(r'^team$', core_views.test1.as_view(), name='team'),
+    url(r'^team$', core_views.team, name='team'),
     url(r'^attendance$', core_views.attendance, name='attendance'),
     url(r'^board$', core_views.board, name='board'),
     url(r'^login/$', auth_views.login, {'template_name': 'login.html'}, name='login'),

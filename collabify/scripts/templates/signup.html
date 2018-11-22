@@ -4,9 +4,9 @@
   <div class="container" style=" background-color:#3C1053;  border-radius: 5px;">
     <h2 class="card-header text-center" style="font-size: 40px; color: white;">Collabify</h2>
       <div class="card-body">
-        <div class="container" style=" border-radius: 5px; padding: 10px; ">
+        <div class="container" style=" border-radius: 5px;">
           <div class="container">
-
+            <p style="color:white;">* All fields are required.</p>
             <form method="post">
               {% csrf_token %}
               {% for field in form %}
@@ -29,7 +29,8 @@
       </div>
   </div>
 </div>
-
+<br>
+  <p style="text-align:center; color:white;"><strong><i class="far fa-copyright"></i> Collabify 2018</strong></p>
 
 
 {% endblock %}

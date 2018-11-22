@@ -80,6 +80,9 @@ def attend_custom(request):
 def attendance(request):
     return render(request, 'attendance_QR_Code.html')
 
+def team(request):
+    return render(request, 'team_page.html')
+
 def board(request):
     return render(request, 'board.html')
 
