@@ -358,3 +358,5 @@ logout user: test via ip: 127.0.0.1
 login user: test via ip: 127.0.0.1
 Not Found: /js/tasks.js
 Not Found: /events
+login user: test via ip: 127.0.0.1
+Not Found: /events
