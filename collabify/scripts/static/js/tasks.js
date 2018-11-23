@@ -1,10 +1,22 @@
+var myLowTasks = new Array();
+var myMediumTasks = new Array();
+var myHighTasks = new Array();
+
+var totalLowTasksMade = 1;
+var totalMedTasksMade = 1;
+var totalHighTasksMade = 1;
 
 //not really sure if this is necessary
-function HighPrioTaskMachine(id){
-	$( "#dragH0" ).clone()
+function LowPrioTaskMachine(id){
+  $( "#dragL0" ).clone()
 		.attr("id", id)
 		.css({"display": "block"})
 		.appendTo( "#clonehere");
+
+}
+
+function functionName(){
+  console.log("This workss.");
 }
 
 //task variables
@@ -30,7 +42,7 @@ function Task(name, percent, prio, assigned){
   
   if(prio == 0){
     myLowTasks.push(this);
-    //writeLowUserTask(percent, name);
+    writeLowUserTask(percent, name);
     this.id = "dragL" + totalLowTasksMade;
 	totalLowTasksMade++;
   } else if (prio == 1) {
@@ -48,7 +60,7 @@ function Task(name, percent, prio, assigned){
 
 //display tasks
 function displayLowTask(task){
-
+  console.log(task.id);
   var d = new Date(task.date); //reads miliseconds to dates
 
   $( "#" + task.id + " #lowHeader button" ).attr("id", "delete-"+task.id);
@@ -119,10 +131,5 @@ function displayLowTask(task){
 
 //writes to database--need to update this
  function writeLowUserTask(LowTaskCompleted, LowTaskName) {
-  firebase.database().ref('Tasks/LowTasks/').set({
-    taskName: LowTaskName,
-    taskCompleted: LowTaskCompleted,
-    
-    });
-  console.log("Write to database successful - Low");
+  
 }
