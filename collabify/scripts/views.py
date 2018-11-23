@@ -26,6 +26,7 @@ def home(request):
     return render(request, 'index.html')
 
 def team(request):
+    #return render(request, 'team_creation.html')
     return render(request, 'team_creation.html')
 
 
@@ -80,8 +81,6 @@ def attend_custom(request):
 def attendance(request):
     return render(request, 'attendance_QR_Code.html')
 
-def team(request):
-    return render(request, 'team_page.html')
 
 def board(request):
     return render(request, 'board.html')
