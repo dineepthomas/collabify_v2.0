@@ -1,6 +1,3 @@
-{% extends 'base.html' %}
-
-{% block content %}
 <!--
 <div class = "container">
   <div class="container" style=" background-color:#3C1053;  border-radius: 5px;">
@@ -20,20 +17,21 @@
       </div>
   </div>
 </div> -->
-
 <!DOCTYPE html>
-<html lang = "en">
-<meta charset="utf-8">
+<html lang="en">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    {% load static %}
+   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+  <script src="//d3js.org/d3.v3.min.js"></script>
+  {% load static %}
+  <link href="{% static 'css/styles.css' %}" rel="stylesheet">
 </head>
 <!--Navbar css-->
 
@@ -82,42 +80,43 @@ $(function() {
 
 <body>
 	<!--Navbar-->
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid"style="background-color:#000000;">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#" style="background-color:#000000;"><font color="white" style=" size: 20px; font-family: 'Exo 2', sans-serif;"><strong>Collabify </strong></font>
+          <font style="font-size:22px;font-family:'Pacifico', cursive; color:white; padding-left:10px;">for</font>
+        </a>
+        <img src = "../static/images/index_4.png" class="img-responsive" height="100" width="100" style="padding-top:10px;"><br>
+      </div>
+      <div>
 
-<div class="topnav">
-  <a class="active" href="#home">Home</a>
-  <a href="#news">News</a>
-  <a href="#contact">Contact</a>
-  <a href="#about">About</a>
-</div>
+      </div>
+      </div>
+  </nav>
+  <br>
+  <br></br>
 
-
-<div class="container-fluid">
-  <div class="text-center">
-    <img src="https://chart.googleapis.com/chart?cht=qr&chl=Hello+World&chs=160x160&chld=L|0"
-         class="qr-code img-thumbnail img-responsive">
+<body>
+  <div class="well">
+    <form method="get" action="/dashboard">
+      <button type = "submit" style = "border-radius:5px;background-color:#3C3A3A;border-color: #6E6868;margin: 2px; font-family: 'Exo 2', sans-serif;" class ="btn btn-primary"><i class="fas fa-home"> </i> Home</button>
+    </form>
   </div>
-
+<div>
+<h2><font style="padding-left:5px;">Follow the instructions by the professor and enter the code below.</font></h2><br>
   <div class="form-horizontal">
     <div class="form-group">
-      <label class="control-label col-sm-2" for="content">Content:</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" id="content" placeholder="Enter content">
+      <label class="control-label col-sm-2" for="content">Enter the code:</label>
+      <div class="col-md-4">
+        <input type="text" class="form-control" id="content" placeholder="Enter a value">
       </div>
     </div>
     <div class="form-group">
       <div class="col-sm-offset-2 col-sm-10">
-        <button type="button" class="btn btn-default" id="generate">Generate</button>
+        <button type="button" class="btn btn-default" id="generate"><i class="fas fa-share-square"></i> Submit</button>
       </div>
     </div>
   </div>
 </div>
 
 </body>
-
-
-
-
-
-
-
-{% endblock %}
