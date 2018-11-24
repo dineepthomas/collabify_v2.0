@@ -1,14 +1,48 @@
 <!doctype html>
+<!--
+  Material Design Lite
+  Copyright 2015 Google Inc. All rights reserved.
 
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      https://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License
+-->
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="A web application that facilitates an easy way to manage your 4330 project">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <link rel="shortcut icon" type="image/png" href="../static/images/favicon.ico"/>
     <title>Collabify : Dashboard</title>
 
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="images/android-desktop.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Material Design Lite">
+    <link rel="apple-touch-icon-precomposed" href="images/ios-desktop.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+
+    <link rel="shortcut icon" href="images/favicon.png">
+
+    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+    <!--
+    <link rel="canonical" href="http://www.example.com/">
+    -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
     <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
@@ -35,21 +69,38 @@
         <div class="mdl-layout__header-row">
           <span class="mdl-layout-title"><strong>Collabify - Dashboard</strong></span>
           <div class="mdl-layout-spacer"></div>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+            <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
+              <i class="material-icons">search</i>
+            </label>
+            <div class="mdl-textfield__expandable-holder">
+              <input class="mdl-textfield__input" type="text" id="search">
+              <label class="mdl-textfield__label" for="search">Enter your query...</label>
+            </div>
+          </div>
+          <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
+            <i class="material-icons">more_vert</i>
+          </button>
+          <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="hdrbtn">
+            <li class="mdl-menu__item">About</li>
+            <li class="mdl-menu__item">Contact</li>
+            <li class="mdl-menu__item">Legal information</li>
+          </ul>
         </div>
       </header>
       <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
         <header class="demo-drawer-header">
           <div class="demo-avatar-dropdown">
-            <span><i class="fas fa-user fa-lg"> </i> <strong>Welcome, {{name}}</strong></span>
+            <span><i class="fas fa-user fa-2x"></i><strong> Welcome, {{name}}</strong></span>
             <div class="mdl-layout-spacer"></div>
             <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
               <i class="material-icons" role="presentation">arrow_drop_down</i>
               <span class="visuallyhidden">Accounts</span>
             </button>
             <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
-              <li class="mdl-menu__item"><i class="fas fa-lg fa-id-badge" style="padding:5px;"></i>Account</li>
-              <li class="mdl-menu__item"><i class="fas fa-lg fa-cogs" style="padding:5px;"></i>Settings</li>
-              <li class="mdl-menu__item"><i class="fas fa-lg fa-sign-out-alt" style="padding:5px;"></i><a href="{% url 'logout' %}" style="color:black;text-decoration: none !important;">Logout</a></li>
+              <li class="mdl-menu__item"><i class="fas fa-2x fa-id-badge" style="padding:5px;"></i>Account</li>
+              <li class="mdl-menu__item"><i class="fas fa-2x fa-cogs" style="padding:5px;"></i>Settings</li>
+              <li class="mdl-menu__item"><i class="fas fa-2x fa-sign-out-alt" style="padding:5px;"></i><a href = "{% url 'logout' %}">Logout</a></li>
 
             </ul>
           </div>
@@ -57,7 +108,8 @@
         <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
           <a class="mdl-navigation__link" href="/dashboard"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Home</a>
           <a class="mdl-navigation__link" href="/attendance"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">inbox</i>Attendance</a>
-          <a class="mdl-navigation__link" href="/team"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">people</i>Team</a>
+          <a class="mdl-navigation__link" href="/team_creation"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">people</i>Team Creation</a>
+          <a class="mdl-navigation__link" href="/team_info"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">people</i>Team Info</a>
           <a class="mdl-navigation__link" href="/events"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">flag</i>Events</a>
           <a class="mdl-navigation__link" href="/board"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">inbox</i>Board</a>
           <div class="mdl-layout-spacer"></div>
