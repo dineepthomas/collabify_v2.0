@@ -25,14 +25,13 @@ from django.dispatch import receiver
 def home(request):
     return render(request, 'index.html')
 
-def team(request):
-    #return render(request, 'team_creation.html')
-    return render(request, 'team_creation.html')
+def team_info(request):
+    return render(request, 'team_page.html')
 
 
-class test1(TemplateView):
+class team_creation(TemplateView):
     print("test1 called")
-    template_name = 'post_team_info.html'
+    template_name = 'team_creation.html'
 
     def get(self,request):
         print("test1 get called")
@@ -51,37 +50,48 @@ class test1(TemplateView):
             print(text)
             print(team_des)
             print(team_list)
-            args = {'text':text,'team_des':team_des,'team_list':team_list}
-            form = PostteamForm()
+            if len(team_list) < 4:
+                messages.error(request, 'please make atleast four selection for team member.')
+                form = PostteamForm()
+                return render(request,'team_creation_error.html',{'form':form})
+            else:
+                args = {'text':text,'team_des':team_des,'team_list':team_list}
+                form = PostteamForm()
+        else:
+            form = PostteamForm(request.POST)
+            messages.error(request, 'please make atleast four selection for team member.')
+            return render(request,'team_creation_error.html',{'form':form})
+
+
 
         return render(request,'team_info_display.html',args )
 
-def attend_custom(request):
-    if request.method == 'POST':
-        form = attendanceForm(request.POST)
-        if form.is_valid():
-            user = form.save(commit=False)
-            user.is_active = False
-            user.save()
+# def attend_custom(request):
+#     if request.method == 'POST':
+#         form = attendanceForm(request.POST)
+#         if form.is_valid():
+#             user = form.save(commit=False)
+#             user.is_active = False
+#             user.save()
+#
+#             current_site = get_current_site(request)
+#             subject = 'Activate Your MySite Account'
+#             message = render_to_string('account_activation_email.html', {
+#                 'user': user,
+#                 'domain': current_site.domain,
+#                 'uid': force_text(urlsafe_base64_encode(force_bytes(user.pk))),
+#                 'token': account_activation_token.make_token(user),
+#             })
+#             user.email_user(subject, message)
+#
+#             return redirect('account_activation_sent')
 
-            current_site = get_current_site(request)
-            subject = 'Activate Your MySite Account'
-            message = render_to_string('account_activation_email.html', {
-                'user': user,
-                'domain': current_site.domain,
-                'uid': force_text(urlsafe_base64_encode(force_bytes(user.pk))),
-                'token': account_activation_token.make_token(user),
-            })
-            user.email_user(subject, message)
 
-            return redirect('account_activation_sent')
-
-
-
+@login_required
 def attendance(request):
     return render(request, 'attendance_QR_Code.html')
 
-
+@login_required
 def board(request):
     return render(request, 'board.html')
 

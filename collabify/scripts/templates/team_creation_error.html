@@ -38,10 +38,20 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'css/utils.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
 <!--===============================================================================================-->
+
+
 </head>
 <body>
 
 <div class="container-contact100">
+        {% for message in messages %}
+        <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          {{ message }}
+      {% endfor %}
+    </div>
 
   <div class="wrap-contact100" style="font-family: 'Exo 2', sans-serif;">
     <form class="contact100-form validate-form" method="post">{% csrf_token %}
@@ -69,7 +79,7 @@
         <span class="focus-input100"></span>
       </div>
       <!-- team members -->
-      <div class="fieldWrapper">
+      <div class="validate-input" data-validate="Please enter your team name">
         {{ form.team_member.errors }}
         <label for="id_team_member1">Team Member </label>
         {{ form.team_member }}
@@ -79,6 +89,7 @@
           <span>
             <i class="fa fa-paper-plane-o m-r-6" aria-hidden="true"></i>
             <p style = "font-family: 'Exo 2', sans-serif; font-size:15px; color:white;">Good to go</p>
+
           </span>
         </button>
       </div>

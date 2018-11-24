@@ -5,26 +5,25 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet"> 
 
   {% load static %}
-  <link rel="stylesheet" href="{static 'css/team_creation.css' %}">
-  <script type="text/javascript" src = "{static 'js/team_creation.css' %}"></script>
-  <script type="text/javascript" src = "{static 'vendor/jquery/jquery-3.2.1.min.js'}"></script>
-  <script type="text/javascript" src = "{static 'vendor/animsition/js/animsition.min.js'}"></script>
-  <script type="text/javascript" src = "{static 'vendor/bootstrap/js/popper.js'}"></script>
-  <script type="text/javascript" src = "{static 'vendor/bootstrap/js/bootstrap.min.js'}"></script>
-  <script type="text/javascript" src = "{static 'vendor/select2/select2.min.js'}"></script>
-  <script type="text/javascript" src = "{static 'vendor/daterangepicker/moment.min.js'}"></script>
-  <script type="text/javascript" src = "{static 'vendor/daterangepicker/daterangepicker.js'}"></script>
-  <script type="text/javascript" src = "{static 'js/main.js'}"></script>
+  <link rel="stylesheet" href="{% static 'css/team_creation.css' %}">
+  <!-- <script type="text/javascript" src = "{% static 'js/team_creation.css' %}"></script> -->
+  <script type="text/javascript" src = "{% static 'vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+  <script type="text/javascript" src = "{% static 'vendor/animsition/js/animsition.min.js' %}"></script>
+  <script type="text/javascript" src = "{% static 'vendor/bootstrap/js/popper.js' %}"></script>
+  <script type="text/javascript" src = "{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+  <script type="text/javascript" src = "{% static 'vendor/select2/select2.min.js' %}"></script>
+  <script type="text/javascript" src = "{% static 'vendor/daterangepicker/moment.min.js' %}"></script>
+  <script type="text/javascript" src = "{% static 'vendor/daterangepicker/daterangepicker.js' %}"></script>
+  <script type="text/javascript" src = "{% static 'js/main.js' %}"></script>
 
 <!--===============================================================================================-->
 	<link rel="icon" type="image/png" href="">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+	<!-- <link rel="stylesheet" type="text/css" href="{% static 'fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}"> -->
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{% static 'vendor/animate/animate.css' %}">
 <!--===============================================================================================-->
@@ -36,78 +35,57 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{% static 'vendor/daterangepicker/daterangepicker.css' %}">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/utils.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
 <!--===============================================================================================-->
 </head>
 <body>
 
-	<nav class="navbar navbar-inverse navbar-fixed-top">
-		<div class="container-fluid"style="background-color:#000000;">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="#" style="background-color:#000000;"><font color="white" style=" size: 20px; font-family: 'Exo 2', sans-serif;"><strong>Collabify </strong></font>
-					<font style="font-size:22px;font-family:'Pacifico', cursive; color:white; padding-left:10px;">for</font>
-				</a>
-				<img src = "../static/images/index_4.png" class="img-responsive" height="100" width="100" style="padding-top:10px;"><br>
-			</div>
-			<div>
+<div class="container-contact100">
 
-			</div>
-			</div>
-	</nav>
-	<br>
-	<br></br>
+  <div class="wrap-contact100" style="font-family: 'Exo 2', sans-serif;">
+    <form class="contact100-form validate-form" method="post">{% csrf_token %}
+      <span class="contact100-form-title">
+        <p style = "font-family: 'Exo 2', sans-serif; font-size:30px;">Collabify : Team setup</p>
+      </span>
+      <p>Note: All fields are required</p>
+      <br>
 
+      {{ form.non_field_errors }}
+      <div class="wrap-input100 validate-input" data-validate="Please enter your team name">
+        {{ form.team_name.errors }}
+        <input class="input100" type="text" name= "team_name" placeholder="Team Name">
 
-	<div class="container-contact100">
+        <!-- <label for="id_name">Team Name</label> -->
+        <!-- {{ form.team_name }} -->
+          <span class="focus-input100"></span>
+      </div>
+      <!-- * team description -->
+      <div class="wrap-input100 validate-input" data-validate = "Please enter your team description">
+          {{ form.team_description.errors }}
+        <textarea class="input100" name="team_description" placeholder="Team Description"></textarea>
+        <!-- <label for="id_description">Team Description</label> -->
+        <!-- {{ form.team_description }} -->
+        <span class="focus-input100"></span>
+      </div>
+      <!-- team members -->
+      <div class="validate-input" data-validate="Please enter your team name">
+        {{ form.team_member.errors }}
+        <label for="id_team_member1">Team Member </label>
+        {{ form.team_member }}
+      </div>
+      <div class="container-contact100-form-btn">
+        <button class="contact100-form-btn", type="submit">
+          <span>
+            <i class="fa fa-paper-plane-o m-r-6" aria-hidden="true"></i>
+            <p style = "font-family: 'Exo 2', sans-serif; font-size:15px; color:white;">Good to go</p>
 
-		<div class="wrap-contact100" style = "font-family: 'Exo 2', sans-serif;">
-			<form class="contact100-form validate-form">
-				<span class="contact100-form-title">
-					<p style = "font-family: 'Exo 2', sans-serif; font-size:30px;">Collabify : Team setup</p>
-				</span>
-				<p>Note: All fields are required</p>
-				<br>
-
-				<div class="wrap-input100 validate-input" data-validate="Please enter your team name">
-					<input class="input100" type="text" name="name" placeholder="Team Name">
-					<span class="focus-input100"></span>
-				</div>
-
-				<div class="wrap-input100 validate-input" data-validate = "Please enter your team description">
-					<textarea class="input100" name="message" placeholder="Team Description"></textarea>
-					<span class="focus-input100"></span>
-				</div>
-
-				<div>
-					<form action="">
-					  <select class="mdb-select md-form colorful-select dropdown-primary" multiple searchable="Search here.." style="width: 550px; height: 100px;">
-						  <option value="" disabled selected>Choose your team members from the list:</option>
-						  <option value="1">Alexander</option>
-						  <option value="2">Alice</option>
-						  <option value="3">Clara</option>
-						  <option value="4">Emilie</option>
-						  <option value="5">John</option>
-						</select>
-						<br>
-					<label>All done?</label><br>
-				<button class="btn-save btn btn-primary btn-sm">Check...</button>
-					<span class="focus-input100"></span>
-				</div>
-
-
-				<div class="container-contact100-form-btn">
-					<button class="contact100-form-btn">
-						<span>
-							<i class="fa fa-paper-plane-o m-r-6" aria-hidden="true"></i>
-							<p style = "font-family: 'Exo 2', sans-serif; font-size:15px; color:white;">Good to go</p>
-						</span>
-					</button>
-				</div>
-			</form>
-		</div>
-	</div>
-
+          </span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
 
 
 	<div id="dropDownSelect1"></div>
@@ -128,16 +106,5 @@
 	<script src="{% static 'vendor/countdowntime/countdowntime.js' %}"></script>
 <!--===============================================================================================-->
 	<script src="{% static 'js/main.js' %}"></script>
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-23581568-13');
-</script>
-
 </body>
 </html>
