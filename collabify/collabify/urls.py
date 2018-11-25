@@ -41,5 +41,6 @@ urlpatterns = [
         auth_views.password_reset_confirm, name='password_reset_confirm'),
     url(r'^reset/done/$', auth_views.password_reset_complete, name='password_reset_complete'),
     url(r'^admin/', admin.site.urls),
+    url('^searchableselect/', include('searchableselect.urls')),
     ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS)

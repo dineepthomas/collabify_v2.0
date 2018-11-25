@@ -13,8 +13,9 @@ from django.contrib.auth import update_session_auth_hash # to make sure after pa
 from django.contrib.auth.decorators import login_required # to prevent sites to be accessed based on url. only if logged
                                         # in then show the page or else don't.
 from scripts.forms import SignUpForm,PostteamForm
-from scripts.models import newTeam
+from scripts.models import newTeamcreation
 from scripts.tokens import account_activation_token
+
 from django.contrib import messages
 from django.views.generic import TemplateView,FormView
 from django.http import HttpResponse
@@ -26,7 +27,14 @@ def home(request):
     return render(request, 'index.html')
 
 def team_info(request):
-    return render(request, 'team_page.html')
+    user_name = request.user.username
+    print ("user_name\t",user_name)
+    one_team = newTeamcreation.objects.filter(team_created_by=request.user.username)[0]
+    text = one_team.team_name
+    team_des = one_team.team_description
+    team_list = one_team.team_member
+    args = {'text':text,'team_des':team_des,'team_list':team_list}
+    return render(request, 'team_page.html',args)
 
 
 class team_creation(TemplateView):
@@ -52,11 +60,18 @@ class team_creation(TemplateView):
             print(team_list)
             if len(team_list) < 4:
                 messages.error(request, 'please make atleast four selection for team member.')
-                form = PostteamForm()
+                form = PostteamForm(request.POST)
                 return render(request,'team_creation_error.html',{'form':form})
             else:
                 args = {'text':text,'team_des':team_des,'team_list':team_list}
+                team_creation = form.save(commit=False)
+                team_creation.team_created_by = request.user.username
+                team_creation.save()
+                form.save_m2m() # needed since using commit=False
+
                 form = PostteamForm()
+                return render(request,'team_page.html',args )
+
         else:
             form = PostteamForm(request.POST)
             messages.error(request, 'please make atleast four selection for team member.')
