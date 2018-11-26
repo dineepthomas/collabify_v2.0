@@ -29,16 +29,20 @@ def home(request):
 def team_info(request):
     user_name = request.user.username
     print ("user_name\t",user_name)
-    one_team = newTeamcreation.objects.filter(team_created_by=request.user.username)[0]
-    text = one_team.team_name
-    team_des = one_team.team_description
-    team_list = one_team.team_member
-    args = {'text':text,'team_des':team_des,'team_list':team_list}
-    return render(request, 'team_page.html',args)
+    try:
+        one_team = newTeamcreation.objects.filter(team_created_by=request.user.username)[0]
+        text = one_team.team_name
+        team_des = one_team.team_description
+        team_list = one_team.team_member
+        args = {'text':text,'team_des':team_des,'team_list':team_list}
+        return render(request, 'team_page.html',args)
+    except:
+        messages.error(request, 'please create team first.')
+        form = PostteamForm()
+        return render(request,'team_creation_error.html',{'form':form})
 
 
 class team_creation(TemplateView):
-    print("test1 called")
     template_name = 'team_creation.html'
 
     def get(self,request):
@@ -68,7 +72,6 @@ class team_creation(TemplateView):
                 team_creation.team_created_by = request.user.username
                 team_creation.save()
                 form.save_m2m() # needed since using commit=False
-
                 form = PostteamForm()
                 return render(request,'team_page.html',args )
 
@@ -76,31 +79,6 @@ class team_creation(TemplateView):
             form = PostteamForm(request.POST)
             messages.error(request, 'please make atleast four selection for team member.')
             return render(request,'team_creation_error.html',{'form':form})
-
-
-
-        return render(request,'team_info_display.html',args )
-
-# def attend_custom(request):
-#     if request.method == 'POST':
-#         form = attendanceForm(request.POST)
-#         if form.is_valid():
-#             user = form.save(commit=False)
-#             user.is_active = False
-#             user.save()
-#
-#             current_site = get_current_site(request)
-#             subject = 'Activate Your MySite Account'
-#             message = render_to_string('account_activation_email.html', {
-#                 'user': user,
-#                 'domain': current_site.domain,
-#                 'uid': force_text(urlsafe_base64_encode(force_bytes(user.pk))),
-#                 'token': account_activation_token.make_token(user),
-#             })
-#             user.email_user(subject, message)
-#
-#             return redirect('account_activation_sent')
-
 
 @login_required
 def attendance(request):
@@ -115,8 +93,6 @@ def dashboard(request):
     form = UserCreationForm()
     c = {'form': form}
     return render_to_response("dashboard_2.html", {'name': request.user.username})
-
-    # return render(request, 'dashboard.html')
 
 def signup(request):
     if request.method == 'POST':
@@ -161,23 +137,6 @@ def activate(request, uidb64, token):
         return redirect('dashboard')
     else:
         return render(request, 'account_activation_invalid.html')
-
-# @login_required
-# def change_password(request):
-#     if request.method == 'POST':
-#         form = PasswordChangeForm(request.user, request.POST)
-#         if form.is_valid():
-#             user = form.save()
-#             update_session_auth_hash(request, user)  # Important!
-#             messages.success(request, 'Your password was successfully updated!')
-#             return redirect('change_password')
-#         else:
-#             messages.error(request, 'Please correct the error below.')
-#     else:
-#         form = PasswordChangeForm(request.user)
-#     return render(request, 'change_password.html', {
-#         'form': form
-#     })
 
 log = logging.getLogger(__name__)
 

@@ -6,17 +6,6 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.utils import timezone
 
-CATEGORIES = (
-    ('Alex', 'Alex'),
-    ('John', 'John'),
-    ('Peter', 'Peter'),
-    ('Rambo', 'Rambo'),
-    ('Jason', 'Jason'),
-    ('Eric', 'Eric'),
-    ('WLEE', 'Win Lee'),
-    ('Tabusu', 'Tabusu'),
-)
-
 
 class Team(models.Model):
     team_name = models.CharField(max_length = 500, unique = True)
