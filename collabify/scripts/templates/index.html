@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!-- Includes all the necessary CDN's and the font styling options -->
 <head>
    <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,10 +15,11 @@
   <link rel="shortcut icon" type="image/png" href="../static/images/favicon.ico"/>
   {% load static %}
   <link href="{% static 'css/styles.css' %}" rel="stylesheet">
-  </head>
+</head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
 
+<!-- Navbar -->
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid"style="background-color:#000000;">
     <div class="navbar-header">
@@ -43,8 +45,9 @@
 </nav>
 <hr>
 
-<div style="text-align:right;">
+<!-- Body containing the different intro sections -->
 
+<div style="text-align:right;">
 <!--<div class = "container-fluid" id = "Section_1" style = "background-color:#461D7C; border-radius:5px; color:white;">-->
 <div id="section1" class="container-fluid" style="background-color:#3C1053;"><br>
   <h1>
@@ -66,6 +69,7 @@
 </div>
 
 
+<!-- Footer -->
 <div id="footer" class="container-fluid" style="text-align:center;">
     <p>About</p>
     <p>Contact</p>
@@ -79,10 +83,6 @@
     <p><strong><i class="far fa-copyright"></i> Collabify 2018</strong></p>
 </div>
 </div>
-
-
-
-
 
 </body>
 </html>

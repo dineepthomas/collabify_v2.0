@@ -364,3 +364,31 @@ login user: daemon22 via ip: 127.0.0.1
 logout user: daemon22 via ip: 127.0.0.1
 login user: daemon22 via ip: 127.0.0.1
 logout user: daemon22 via ip: 127.0.0.1
+login failed with username: test from ip 127.0.0.1
+login failed with username: test from ip 127.0.0.1
+login user: test via ip: 127.0.0.1
+Not Found: /images/android-desktop.png
+Not Found: /images/favicon.png
+logout user: test via ip: 127.0.0.1
+login user: test via ip: 127.0.0.1
+Not Found: /favicon.ico
+login user: test via ip: 127.0.0.1
+Not Found: /images/android-desktop.png
+Not Found: /images/favicon.png
+Not Found: /favicon.ico
+logout user: test via ip: 127.0.0.1
+login user: pmoor17 via ip: 127.0.0.1
+login user: pmoor17 via ip: 127.0.0.1
+logout user: pmoor17 via ip: 127.0.0.1
+login user: test via ip: 127.0.0.1
+logout user: test via ip: 127.0.0.1
+login user: test1 via ip: 127.0.0.1
+login user: test1 via ip: 127.0.0.1
+login user: test via ip: 127.0.0.1
+logout user: test via ip: 127.0.0.1
+login user: pmoor17 via ip: 127.0.0.1
+logout user: pmoor17 via ip: 127.0.0.1
+login user: pmoor17 via ip: 127.0.0.1
+login user: pmoor17 via ip: 127.0.0.1
+login user: pmoor17 via ip: 127.0.0.1
+logout user: pmoor17 via ip: 127.0.0.1

@@ -65,7 +65,7 @@ class team_creation(TemplateView):
             if len(team_list) < 4:
                 messages.error(request, 'please make atleast four selection for team member.')
                 form = PostteamForm(request.POST)
-                return render(request,'team_creation_error.html',{'form':form})
+                return render(request,'team_creation.html',{'form':form})
             else:
                 args = {'text':text,'team_des':team_des,'team_list':team_list}
                 team_creation = form.save(commit=False)
@@ -78,7 +78,7 @@ class team_creation(TemplateView):
         else:
             form = PostteamForm(request.POST)
             messages.error(request, 'please make atleast four selection for team member.')
-            return render(request,'team_creation_error.html',{'form':form})
+            return render(request,'team_creation.html',{'form':form})
 
 @login_required
 def attendance(request):
