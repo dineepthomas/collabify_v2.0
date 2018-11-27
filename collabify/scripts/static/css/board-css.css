@@ -6,6 +6,9 @@ body{
   font-size: 18px;
   padding: 2px;
 }
+html, body{
+    height:100%;
+}
 .cancelbtn {
     width: auto;
     padding: 10px 18px;
@@ -143,11 +146,38 @@ ul.breadcrumb li a:hover {
 .column{
     width: 25%;
     float: left;
-    height: auto;
+    margin-bottom:0px;
     padding-bottom: 50px;
     padding:auto;
     text-align: center;
+    height: auto;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    border-collapse: collapse;
+
+}
+.master{
     border: 1px solid black;
+    
+    overflow: auto;
+    border-collapse: collapse;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    
+}
+.blank_row
+{
+    padding-bottom: 90px;
+}
+
+table, td{
+    resize: vertical;
+    overflow: auto;
+    empty-cells: show;
+    padding-bottom: 30px;
 }
 
 /* There are two #cloneheres, need to figure out which one is used */

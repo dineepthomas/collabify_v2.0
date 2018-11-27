@@ -6,7 +6,7 @@ var totalLowTasksMade = 1;
 var totalMedTasksMade = 1;
 var totalHighTasksMade = 1;
 
-//not really sure if this is necessary
+//Clones and places card in clonehere
 function LowPrioTaskMachine(id){
   $( "#taskCard" ).clone()
 		.attr("id", id)
@@ -25,7 +25,7 @@ var task ={
   catagory: null
 } ;
 
-//create task
+//task attributes
 function Task(name, percent, prio, assigned){
   this.name = name;
   this.percentage = percent;
@@ -36,7 +36,6 @@ function Task(name, percent, prio, assigned){
   this.catagory = null;
   if(prio == 0){
     myLowTasks.push(this);
-    writeLowUserTask(percent, name);
     this.id = "dragL" + totalLowTasksMade;
 	totalLowTasksMade++;
   } else if (prio == 1) {
@@ -70,12 +69,18 @@ function displayLowTask(task){
     .html("<strong>" + task.assigned + "</strong>  " + d.toDateString() );
  }
 
+//Supposed to show the progress bar animation for finishing a task
+//but it somehow doesn't work with our code
  function move(id) {
   var parsedID = id.slice(13); //seperates ID into usable parts
   var parsedPrio = parsedID.slice(0,1);
   var parsedIDNum = parsedID.slice(1);
-
+    console.log("parsedID: " + parsedID+"");
+  console.log("parsedprio: " + parsedPrio+"");
+  console.log("parsedIDNum: " + parsedIDNum+"");
   var elem = document.getElementById("Bardrag"+parsedID);
+  console.log("at least this works");
+  console.log(elem);
   if(elem.textContent.slice(1,2) == '%'){
     var width = elem.textContent.slice(0,1);
 
@@ -120,10 +125,10 @@ function displayLowTask(task){
     }
   }
 }
-
+//Shows or hides card on call
 function show_hide(id) {
   var deletionCheck = id.slice(0,1);
-
+  //redundant but possibly useful in future
   if(deletionCheck == "d"){
     var parsedShowID = id.slice(5);
     console.log(parsedShowID);
@@ -175,12 +180,6 @@ function drop(ev) {
 
 }
 
-
-//writes to database--need to update this
-function writeLowUserTask(LowTaskCompleted, LowTaskName) {
-  
-}
-
 $(function() {
   var dialog, 
     form,
@@ -205,7 +204,7 @@ $(function() {
       tips.removeClass( "ui-state-highlight", 1500 );
     }, 500 );
   }
- 
+  
   function checkLength( o, n, min, max ) {
     if ( o.val().length > max || o.val().length < min ) {
       o.addClass( "ui-state-error" );
@@ -216,7 +215,7 @@ $(function() {
       return true;
     }
   }
- 
+  //Used to check the correctness of the forms in task creation form
   function checkRegexp( o, regexp, n ) {
     if ( !( regexp.test( o.val() ) ) ) {
       o.addClass( "ui-state-error" );
@@ -226,7 +225,7 @@ $(function() {
       return true;
     }
   }
- 
+  //doesn't get called at all. Need to look into this
   function addTask() {
     console.log("called add task");
     var createdTask = new Task(name.val(), percentage.val(), priority, assigned.val());
@@ -253,7 +252,7 @@ $(function() {
       }
     }
     var valid = true;
-    allFields.removeClass( "ui-state-error" );
+    //allFields.removeClass( "ui-state-error" );
     valid = valid && checkLength( name, "task name", 1, 30 );
     valid = valid && checkLength( percentage, "percentage", 1, 2 );
     valid = valid && checkLength( assigned, "worker's name(s)", 1, 30 );
@@ -261,11 +260,9 @@ $(function() {
     valid = valid && checkRegexp( percentage, /([0-9])+$/i, "Starting Perent must be an integer from 1 to 100" );
     valid = valid && checkRegexp( assigned, /([0-9a-z_\s])+$/i, "Name of worker task is assigned to. field may consist of a-z, 0-9, underscores, spaces and must begin with a letter." );
     if ( valid ) {
-      console.log("valid");
       var createdTask = new Task(name.val(), percentage.val(), priority, assigned.val());
       var newTask = LowPrioTaskMachine(createdTask.id);
       displayLowTask(createdTask);
-      dialog.dialog("close");
     }
     return valid;
   }
@@ -274,6 +271,7 @@ $(function() {
   $(function(){
     $('#clickme').click(function(){
          createTask();
+         dialog.dialog("close");
     });
   });
 
@@ -293,6 +291,7 @@ $(function() {
         dialog.dialog("close");
     }
   }
+  //dialog form settings
   dialog = $( "#dialog-form" ).dialog({
     autoOpen: false,
     modal: true,
@@ -305,7 +304,7 @@ $(function() {
   form = dialog.find( "form" ).on( "submit", function( event ) {
     event.preventDefault();
   });
- 
+  //create user function call for button
   $( "#create-user" ).button().on( "click", function() {
     dialog.dialog( "open" ); 
   });
@@ -314,7 +313,3 @@ $(function() {
 function remove(id) { 
   document.getElementById(id).parentElement.parentElement.outerHTML = ""; 
 }
-
-//lowprioritytask, lowheader, deletelow-0-->DeleteTask, showlow0-->ShowTask
-//collapselow0--> CollapseTask, lowfooter-->TaskFooter, Bar-->taskPercent
-

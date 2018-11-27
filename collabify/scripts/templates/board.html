@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html lang = "en">
+<html lang="en">
 <meta charset="utf-8">
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
-  
+
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -16,7 +15,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <!-- Jquery Libraries -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script> 
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   {% load static %}
 
@@ -28,52 +27,52 @@
 </head>
 
 <body>
-<!--Breadcrumbs-->
-<ul class="breadcrumb">
-  <li><a href="/dashboard">Home</a></li>
-  <li style="color: white">Board</li>
-</ul>
+  <!--Breadcrumbs-->
+  <ul class="breadcrumb">
+    <li><a href="/dashboard">Home</a></li>
+    <li style="color: white">Board</li>
+  </ul>
 
-<br>
+  <br>
 
-<button type="button" id="create-user">Create New Task</button>
+  <button type="button" id="create-user">Create New Task</button>
 
-<!-- Task Creation Modal -->
+  <!-- Task Creation Modal -->
 
-<div id="dialog-form" class="modal">
-  <form class="modal-content animate">
-    <div class="header">
-      <strong>Create a Task</strong>
-    </div>
-    <p class="validateTips">All form fields are required.</p>
-    <span id="closeme" class="close closer" title="Close Modal">&times;</span>
+  <div id="dialog-form" class="modal">
+    <form class="modal-content animate">
+      <div class="header">
+        <strong>Create a Task</strong>
+      </div>
+      <p class="validateTips">All form fields are required.</p>
+      <span id="closeme" class="close closer" title="Close Modal">&times;</span>
       <fieldset>
         <div class="container testing">
           <label for="taskName"><b>Task Name</b></label>
           <form method="POST">
             <input type="text" required placeholder="Enter Task Name" name="taskName" id="taskName" class="text ui-widget-content ui-corner-all">
           </form>
-          <form method ="POST">
+          <form method="POST">
             <fieldset for="priorityLevel" id="priorityField" class="text ui-widget-content ui-corner-all">
               <label><Strong>Priority Level:</Strong></label>
-              <label>High 
-                <input style="float: left;" required type="radio" name="priorityLevel" id="priorityLevel" value="2"> 
+              <label>High
+                <input style="float: left;" required type="radio" name="priorityLevel" id="priorityLevel" value="2">
               </label>
-              <label>Medium 
+              <label>Medium
                 <input style="float: left;" required type="radio" name="priorityLevel" id="priorityLevel" value="1">
               </label>
-              <label>Low 
-                <input style="float: left;" required  type="radio" name="priorityLevel" id="priorityLevel" value="0" checked>
+              <label>Low
+                <input style="float: left;" required type="radio" name="priorityLevel" id="priorityLevel" value="0" checked>
               </label>
             </fieldset>
           </form>
           <label for="percentageDone"><strong>Starting Percent</strong></label>
           <form method="POST">
-            <input type="text" required  name="percentageDone" id="percentageDone" placeholder="10" class="text ui-widget-content ui-corner-all">
+            <input type="text" required name="percentageDone" id="percentageDone" placeholder="10" class="text ui-widget-content ui-corner-all">
           </form>
           <label for="assignedTo"><strong>Assigned to</strong></label>
           <form method="POST">
-            <input type="text" required  name="assignedTo" id="assignedTo" placeholder="Bob" class="text ui-widget-content ui-corner-all">
+            <input type="text" required name="assignedTo" id="assignedTo" placeholder="Bob" class="text ui-widget-content ui-corner-all">
           </form>
           <div class="container" align="center">
             <button type="button" id="clickme" style="width:auto;">Create Task</button>
@@ -81,65 +80,89 @@
           <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
         </div>
       </fieldset>
-  </form>
-</div>
-
-<!-- Kanban Board Skeleton -->
-<div style="width:100%; overflow: hidden; padding-top: 25px;">  
-  <div class="column" ondrop="drop(event)" ondragover="allowDrop(event)">
-    <div class="container bg-warning rounded">
-      <p class="divCategoryHeadParagraph"><strong>BackLog</strong></p>
-    </div>
+    </form>
   </div>
-  <div class="column" ondrop="drop(event)" ondragover="allowDrop(event)">
-    <div class="container bg-info rounded">
-      <p class="divCategoryHeadParagraph"><strong>Today</strong></p>
-    </div>
-  </div>
-  <div class="column" ondrop="drop(event)" ondragover="allowDrop(event)">
-    <div class="container bg-info rounded">
-      <p class="divCategoryHeadParagraph"><strong>Current</strong></p>
-      <!--Possibly use developing instead of current?-->
-    </div>
-  </div>
-  <div class="column" ondrop="drop(event)" ondragover="allowDrop(event)">
-    <div class="container bg-success rounded">
-      <p class="divCategoryHeadParagraph"><strong>Finished</strong></p>
-    </div>
-  </div>
-</div>
 
 
-<!-- Low Prio Task Demo -->
-<div class="task" style="display: none;" id="taskCard" draggable="true" ondragstart="drag(event)">
-  <header class="w3-blue taskName" id="taskHeader">
-    <h1 style="display:inline;">Task Name</h1>
-    <!--
-    <button  type="button" class="close" aria-label="Close" style="float:right;" id="deleteTask" onclick="remove(this.id)">  X  </button>
-    <a onclick="show_hide(this.id)" style="cursor:pointer; text-decoration:underline; float: right;" id="showTask">Hide</a>
-    -->
+  <!-- Kanban Board Skeleton -->
+  <div class="master" style="width:100%; overflow: hidden; margin-top: 25px; height:auto;">
+    <div class="column boardHeader" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <div class="container bg-success boardHeader">
+        <p class="divCategoryHeadParagraph"><strong>BackLog</strong></p>
+      </div>
+    </div>
+    <div class="column" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <div class="container bg-info rounded">
+        <p class="divCategoryHeadParagraph"><strong>Today</strong></p>
+      </div>
+    </div>
+    <div class="column" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <div class="container bg-info rounded">
+        <p class="divCategoryHeadParagraph"><strong>Current</strong></p>
+        <!--Possibly use developing instead of current?-->
+      </div>
+    </div>
+    <div class="column" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <div class="container bg-success rounded">
+        <p class="divCategoryHeadParagraph"><strong>Finished</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- New Kanban Board -->
+  <!--
+  <table class="" style="width:100%; margin-top: 50px;">
+    <tr>
+      <th width="25%">BackLog</th>
+      <th width="25%">Today</th>
+      <th width="25%">Current</th>
+      <th width="25%">Finished</th>
+    </tr>
+    <tr id="blank_row" height="50px" style="">
+      <td ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+      <td ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+      <td ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+      <td ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+    </tr>
+  </table>
+-->
+
+
+
+  <!-- Task Card Structure -->
+
+  <!--Card Header-->
+  <div class="task" style="display: none;" id="taskCard" draggable="true" ondragstart="drag(event)">
+    <header class="w3-container w3-round w3-blue taskName" id="taskHeader">
+      <h1 style="display:inline;">Task Name</h1>
+      <button type="button" class="close" aria-label="Close" style="float:right;" id="deleteTask" onclick="remove(this.id)"> X </button>
+
       <i class="fa fa-pencil-square-o" aria-hidden="true" onclick=""></i>
-        </header> 
-  <div id="collapseTask">
-    <div class="w3-container">
-      <p><strong>Progress: </strong></p>
-      <div class="w3-light-grey w3-round">
-        <!--Need to change colors based on prio-->
-        <div class="w3-light-blue w3-center" id="taskPercent" style="width:12%">12%</div>
-      </div> 
-    <div class="container" align="center">
-    <br>
-      <button type="button" class="btn btn-dark rounded" onclick="move(this.id)">Complete</button> 
-    <br>
-    <br>
-    </div>
-    </div>
-    <footer class="w3-blue" id="taskFooter">
-      <h5>worker</h5>
-    </footer>
-  </div>
-</div>
 
-<div id="clonehere"></div>
+      <a onclick="show_hide(this.id)" style="cursor:pointer; text-decoration:underline; float: right;" id="showTask">Hide</a>
+    </header>
+    <!-- Card Body -->
+    <div id="collapseTask">
+      <div class="w3-container">
+        <p><strong>Progress: </strong></p>
+        <div class="w3-light-grey w3-round">
+          <!--Need to change colors based on prio-->
+          <div class="w3-light-blue w3-center" id="taskPercent" style="width:12%">12%</div>
+        </div>
+        <div class="container" align="center">
+          <br>
+          <button type="button" class="btn btn-dark rounded" onclick="move(this.id)">Complete</button>
+          <br>
+          <br>
+        </div>
+      </div>
+      <!-- Card Footer -->
+      <footer class="w3-blue" id="taskFooter">
+        <h5>worker</h5>
+      </footer>
+    </div>
+  </div>
+  <!-- Place where new cards get placed -->
+  <div id="clonehere"></div>
 
 </body>

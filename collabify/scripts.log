@@ -360,10 +360,12 @@ Not Found: /js/tasks.js
 Not Found: /events
 login user: test via ip: 127.0.0.1
 Not Found: /events
+<<<<<<< Updated upstream
 login user: daemon22 via ip: 127.0.0.1
 logout user: daemon22 via ip: 127.0.0.1
 login user: daemon22 via ip: 127.0.0.1
 logout user: daemon22 via ip: 127.0.0.1
+<<<<<<< Updated upstream
 login failed with username: test from ip 127.0.0.1
 login failed with username: test from ip 127.0.0.1
 login user: test via ip: 127.0.0.1
@@ -392,3 +394,30 @@ login user: pmoor17 via ip: 127.0.0.1
 login user: pmoor17 via ip: 127.0.0.1
 login user: pmoor17 via ip: 127.0.0.1
 logout user: pmoor17 via ip: 127.0.0.1
+=======
+=======
+login user: preston via ip: 127.0.0.1
+Not Found: /images/android-desktop.png
+Not Found: /images/favicon.png
+Not Found: /favicon.ico
+login user: preston via ip: 127.0.0.1
+login user: preston via ip: 127.0.0.1
+login user: preston via ip: 127.0.0.1
+login user: preston via ip: 127.0.0.1
+logout user: preston via ip: 127.0.0.1
+login user: preston via ip: 127.0.0.1
+Not Found: /events
+>>>>>>> Stashed changes
+login failed with username: preston from ip 127.0.0.1
+login user: preston via ip: 127.0.0.1
+login user: preston via ip: 127.0.0.1
+login user: preston via ip: 127.0.0.1
+Not Found: /css/jquery-ui.css
+Not Found: /css/bootstrap.css
+Not Found: /css/jquery-ui.min.css
+Not Found: /css/dialoguetheme.css
+Not Found: /css/bootstrap.css
+Not Found: /css/jquery-ui.css
+Not Found: /css/jquery-ui.min.css
+Not Found: /css/dialoguetheme.css
+>>>>>>> Stashed changes
