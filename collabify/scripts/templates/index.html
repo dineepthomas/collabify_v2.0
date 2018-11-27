@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!-- Includes all the necessary CDN's and the font styling options -->
 <head>
    <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,145 +11,66 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+  <link rel="shortcut icon" type="image/png" href="../static/images/favicon.ico"/>
   {% load static %}
   <link href="{% static 'css/styles.css' %}" rel="stylesheet">
-
-  <!-- Where do I put this if statement? -->
-  <!--
-  {% if form.errors %}
-    <p style="color: red">Your username and password didn't match. Please try again.</p>
-  {% endif %}
-  -->
-  <style>
-    .topnav {
-      overflow: hidden;
-      background-color: #333;
-    }
-
-    .topnav a {
-      float: left;
-      display: block;
-      color: black;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-      font-size: 22px;
-    }
-
-    .topnav a:hover {
-      background-color: #ddd;
-      color: black;
-    }
-
-    .topnav a.active {
-      background-color: #2196F3;
-      color: white;
-    }
-
-    .topnav .login-container {
-      float: right;
-    }
-
-    .topnav input[type=text] {
-      padding: 6px;
-      margin-top: 8px;
-      font-size: 17px;
-      border: none;
-      width:120px;
-    }
-
-    .topnav .login-container button {
-      float: right;
-      padding: 6px 10px;
-      margin-top: 8px;
-      margin-right: 16px;
-      background-color: #555;
-      color: white;
-      font-size: 17px;
-      border: none;
-      cursor: pointer;
-    }
-
-    .topnav .login-container button:hover {
-      background-color: green;
-    }
-
-    @media screen and (max-width: 600px) {
-      .topnav .login-container {
-        float: none;
-      }
-      .topnav a, .topnav input[type=text], .topnav .login-container button {
-        float: none;
-        display: block;
-        text-align: left;
-        width: 100%;
-        margin: 0;
-        padding: 14px;
-      }
-      .topnav input[type=text] {
-        border: 1px solid #ccc;  
-      }
-    }
-  </style>
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
 
-<nav class="topnav navbar-fixed-top">
-  <div class="container-fluid">
-      <a class="navbar-brand" href="#"><font color="white" style=" size: 20px; font-family: 'Exo 2', sans-serif;"><strong>Collabify : </strong>Create, Share, Collaborate </font></a>
-      
-      <div class="login-container">
-        <form action="">
-          <input type="text" placeholder="Username" name="username">
-          <input type="text" placeholder="Password" name="psw">
-          <button type="submit">Log in</button>
+<!-- Navbar -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid"style="background-color:#000000;">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#" style="background-color:#000000;"><font color="white" style=" size: 20px; font-family: 'Exo 2', sans-serif;"><strong>Collabify </strong></font>
+        <font style="font-size:22px;font-family:'Pacifico', cursive; color:white; padding-left:10px;">for</font>
+      </a>
+      <img src = "../static/images/LSU_Gold_CMYK.png" class="image-responsive" height="50" width="90" style="padding-left:0px;padding-top:14px;padding-bottom:14px;padding-right:14px;"><br>
+    </div>
+  <div>
+       <div style = "float:right; padding:5px;">
+        <form method="get" action="/login">
+          <button type = "submit" style = "border-radius:5px;background-color:#3C3A3A;border-color: #6E6868;margin: 2px; font-family: 'Exo 2', sans-serif;" class ="btn btn-primary">Login</button>
         </form>
       </div>
 
-
-
-
-
-    <!--
-    <div>
       <div style = "float:right; padding:5px;">
-          <form method="get" action="/login">
-          <button type = "submit" style = "background-color: #435F65; margin: 2px; font-family: 'Exo 2', sans-serif;" class ="btn btn-primary">Login</button>
+        <form method="get" action="/signup">
+          <button type = "submit" style = "border-radius:5px;background-color:#3C3A3A;border-color: #6E6868; margin: 2px; font-family: 'Exo 2', sans-serif;" class ="btn btn-primary">Signup</button>
         </form>
-            <form method="get" action="/signup">
-          <button type = "submit" style = "background-color: #435F65; margin: 2px; font-family: 'Exo 2', sans-serif;" class ="btn btn-primary">Signup</button>
-        </form>
-      </div>-->
+      </div>
+    </div>
     </div>
 </nav>
-<br><br>
+<hr>
 
-<div style="padding-top:5px; text-align:center;">
+<!-- Body containing the different intro sections -->
 
+<div style="text-align:right;">
 <!--<div class = "container-fluid" id = "Section_1" style = "background-color:#461D7C; border-radius:5px; color:white;">-->
-
-<div id="section1" class="container-fluid">
-  <h1>Section 1</h1>
-
-  </div>
-<div id="section2" class="container-fluid">
-  <h1>Section 2</h1>
+<div id="section1" class="container-fluid" style="background-color:#3C1053;"><br>
+  <h1>
+    <font style="color:white;">
+      "Alone we can do so little; together we can do so much."</h1>
+  <h3>-Helen Keller</h3>
+  <p style="font-size:19px;">Here at collabify we celebrate team work that's why we designed our software to help our peers at LSU work together and focus on the project rather than finding the right tools to collaborate.</p>
+</font>
+  <img src = "../static/images/index_2.png" class="img-responsive">
 </div>
-<div id="section3" class="container-fluid">
-  <h1>Section 3</h1>
 
+<div id="section2" class="container-fluid" style="background-color:#3C1053;"><br><br>
+  <h1>
+    <font style="color:white;">
+      "It is literally true that you can succeed best and quickest by helping others to succeed."</h1>
+  <h3>-Napolean Hill</h3>
+</font>
+  <img src = "../static/images/index_3.png" class="img-responsive">
 </div>
-<div id="section41" class="container-fluid">
-  <h1>Section 4 Submenu 1</h1>
 
-</div>
-<div id="section42" class="container-fluid">
-  <h1>Section 4 Submenu 2</h1>
 
-</div>
-<div id="footer" class="container-fluid">
-  <h1>Footer</h1>
+<!-- Footer -->
+<div id="footer" class="container-fluid" style="text-align:center;">
     <p>About</p>
     <p>Contact</p>
     <p>Feedback</p>
@@ -161,10 +83,6 @@
     <p><strong><i class="far fa-copyright"></i> Collabify 2018</strong></p>
 </div>
 </div>
-
-
-
-
 
 </body>
 </html>

@@ -1,380 +1,168 @@
 <!DOCTYPE html>
-<html lang = "en">
+<html lang="en">
 <meta charset="utf-8">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    {% load static %}
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
 
-<!--JavaScript file for all things task-->
-<script src="js/tasks.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-<!--Navbar css-->
-<!--
-<style>
-.topnav {
-  overflow: hidden;
-  background-color: #333;
-}
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <!-- Jquery Libraries -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  {% load static %}
 
-.topnav a {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
+  <!--JavaScript file for all things task-related-->
+  <script src="{% static 'js/tasks.js' %}"></script>
 
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-.topnav a.active {
-  background-color: #4CAF50;
-  color: white;
-}
-</style>
--->
-
-
-<!--Task Creation Modal css-->
-<style>
-/*
-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-}
-/*
-button:hover {
-    opacity: 0.8;
-}
-
-/* Extra styles for the cancel button */
-body{
-	font-size: 18px;
-	padding: 2px;
-}
-.cancelbtn {
-    width: auto;
-    padding: 10px 18px;
-    background-color: #f44336;
-}
-
-/* position the close button */
-.testing {
-    padding: 16px;
-}
-
-span.psw {
-    float: right;
-    padding-top: 16px;
-}
-
-/* The Modal (background) */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    padding-top: 60px;
-}
-	/* Modal Content/Box */
-.modal-content {
-    background-color: #fefefe;
-    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-    border: 1px solid #888;
-    width: 40%; /* Could be more or less, depending on screen size */
-}
-
-/* The Close Button (x) */
-.close {
-    position: absolute;
-    right: 25px;
-    top: 0;
-    color: #000;
-    font-size: 35px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: red;
-    cursor: pointer;
-}
-
-/* Add Zoom Animation */
-.animate {
-    -webkit-animation: animatezoom 0.6s;
-    animation: animatezoom 0.6s
-}
-
-@-webkit-keyframes animatezoom {
-    from {-webkit-transform: scale(0)} 
-    to {-webkit-transform: scale(1)}
-}
-    
-@keyframes animatezoom {
-    from {transform: scale(0)} 
-    to {transform: scale(1)}
-}
-
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-    span.psw {
-       display: block;
-       float: none;
-    }
-    .cancelbtn {
-       width: 100%;
-    }
-}
-</style>
-
-
-<!--Breadcrumb css-->
-<style>
-ul.breadcrumb {
-    padding: 10px 16px;
-    list-style: none;
-    background-color: #333;
-}
-ul.breadcrumb li {
-    display: inline;
-    font-size: 18px;
-}
-ul.breadcrumb li+li:before {
-    padding: 8px;
-    color: black;
-    content: "/\00a0";
-}
-ul.breadcrumb li a {
-    color: #0275d8;
-    text-decoration: none;
-}
-ul.breadcrumb li a:hover {
-    color: #01447e;
-    text-decoration: underline;
-}
-</style>
-
-<!-- Drag and Drop Scripts -->
-<script>
-
-function show_hide(id) {
-  var deletionCheck = id.slice(0,1);
-
-  if(deletionCheck == "d"){
-    var parsedShowID = id.slice(5);
-    console.log(parsedShowID);
-  } else {
-    var parsedShowID = id.slice(5);
-    console.log(parsedShowID);
-  }  
-    
-  dv = document.getElementById("collapse" + parsedShowID);
-  ele = document.getElementById(id);
-
-  if (dv.style.display ==  '')
-    { 
-      dv.style.display = 'none'; 
-      ele.innerHTML = "Show";
-    }
-    else
-    {
-      dv.style.display = ''; 
-      ele.innerHTML = "Hide";
-    }
-}
-
-
-//task movability functions
-
-function allowDrop(ev) {
-    ev.preventDefault();
-}
-
-function drag(ev) {
-    ev.dataTransfer.setData("text", ev.target.id);
-}
-
-function drop(ev) {
-    ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
-    ev.target.appendChild(document.getElementById(data));
-}
-
-
-</script>
-
-
-<!--This style affects the board itself. We need to update this so that the different columns do not stack up on each other when the screen gets small. I also added in a fourth column so I might need to edit the size of each column-->
-<style>
-    /* divCategory affects the columns of the board */
-    .divCategory{
-        width: 250px;
-        height: auto;
-        padding: 10px;
-        padding-bottom: 50px;
-        border: 1px solid black;
-    }
-
-    .column{
-    	width: 25%;
-    	float: left;
-    	height: auto;
-    	padding-bottom: 50px;
-    	padding:auto;
-    	text-align: center;
-    	border: 1px solid black;
-    }
-
-    /* There are two #cloneheres, need to figure out which one is used */
-    #clonehere{
-        width: 350px;
-        height: 500px;
-        padding: 10px;
-        float: left;
-    }
-    .divCategoryHeadParagraph{
-        text-align: center;
-        vertical-align: middle;
-        color: white
-    }
-    .task{
-        background-color: red;
-
-        width: 350px;
-        height: 50px;
-    }
-    .taskName{
-      padding-top: 4px;
-      padding-bottom: 3px;
-    }
-    .percentageBar{
-      padding-top: 3px;
-    }
-    #clonehere{
-      width: 350px;
-      height: 200px;
-    }
-
-</style>
-
+  <!--css file for all styling-->
+  <link rel="stylesheet" href="{% static 'css/board-css.css' %}">
 </head>
+
 <body>
-<!--Breadcrumbs-->
-<ul class="breadcrumb">
-  <li><a href="#">Home</a></li>
-  <li><a href="#">Pictures</a></li>
-  <li><a href="#">Summer 15</a></li>
-  <li style="color: white">Italy</li>
-</ul>
+  <!--Breadcrumbs-->
+  <ul class="breadcrumb">
+    <li><a href="/dashboard">Home</a></li>
+    <li style="color: white">Board</li>
+  </ul>
 
-<!--Navbar-->
-<!--
-<div class="topnav">
-  <a class="active" href="#home">Home</a>
-  <a href="#news">News</a>
-  <a href="#contact">Contact</a>
-  <a href="#about">About</a>
-</div>
--->
+  <br>
 
-<br>
+  <button type="button" id="create-user">Create New Task</button>
 
-<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Create Task</button>
+  <!-- Task Creation Modal -->
 
-<div id="id01" class="modal">
-  
-  <form class="modal-content animate" action="/action_page.php">
-    <div class="imgcontainer">
-      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-    </div>
-
-    <div class="container testing">
-    	<div>
-      		<label for="taskName"><b>Task Name</b></label>
-      		<input type="text" placeholder="Enter Task Name" name="uname" required>
-  		</div>
-  	<div>
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
-    </div> 
-
-      <button type="submit">Login</button>
-      <label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me
-      </label>
-    </div>
-
-    <div class="container testing" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-      <span class="psw">Forgot <a href="#">password?</a></span>
-    </div>
-  </form>
-</div>
-
-<!--<button id="create-task" class="btn btn-primary">Create new task</button>-->
-
-
-<div style="width:100%; overflow: hidden; padding-top: 25px;">	
-	<div class="column" ondrop="drop(event)" ondragover="allowDrop(event)">
-        <div class="container bg-warning rounded">
-            <p class="divCategoryHeadParagraph"><strong>BackLog</strong></p>
+  <div id="dialog-form" class="modal">
+    <form class="modal-content animate">
+      <div class="header">
+        <strong>Create a Task</strong>
+      </div>
+      <p class="validateTips">All form fields are required.</p>
+      <span id="closeme" class="close closer" title="Close Modal">&times;</span>
+      <fieldset>
+        <div class="container testing">
+          <label for="taskName"><b>Task Name</b></label>
+          <form method="POST">
+            <input type="text" required placeholder="Enter Task Name" name="taskName" id="taskName" class="text ui-widget-content ui-corner-all">
+          </form>
+          <form method="POST">
+            <fieldset for="priorityLevel" id="priorityField" class="text ui-widget-content ui-corner-all">
+              <label><Strong>Priority Level:</Strong></label>
+              <label>High
+                <input style="float: left;" required type="radio" name="priorityLevel" id="priorityLevel" value="2">
+              </label>
+              <label>Medium
+                <input style="float: left;" required type="radio" name="priorityLevel" id="priorityLevel" value="1">
+              </label>
+              <label>Low
+                <input style="float: left;" required type="radio" name="priorityLevel" id="priorityLevel" value="0" checked>
+              </label>
+            </fieldset>
+          </form>
+          <label for="percentageDone"><strong>Starting Percent</strong></label>
+          <form method="POST">
+            <input type="text" required name="percentageDone" id="percentageDone" placeholder="10" class="text ui-widget-content ui-corner-all">
+          </form>
+          <label for="assignedTo"><strong>Assigned to</strong></label>
+          <form method="POST">
+            <input type="text" required name="assignedTo" id="assignedTo" placeholder="Bob" class="text ui-widget-content ui-corner-all">
+          </form>
+          <div class="container" align="center">
+            <button type="button" id="clickme" style="width:auto;">Create Task</button>
+          </div>
+          <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
         </div>
+      </fieldset>
+    </form>
+  </div>
+
+
+  <!-- Kanban Board Skeleton -->
+  <div class="master" style="width:100%; overflow: hidden; margin-top: 25px; height:auto;">
+    <div class="column boardHeader" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <div class="container bg-success boardHeader">
+        <p class="divCategoryHeadParagraph"><strong>BackLog</strong></p>
+      </div>
     </div>
     <div class="column" ondrop="drop(event)" ondragover="allowDrop(event)">
-        <div class="container bg-info rounded">
-            <p class="divCategoryHeadParagraph"><strong>Today</strong></p>
-        </div>
+      <div class="container bg-info rounded">
+        <p class="divCategoryHeadParagraph"><strong>Today</strong></p>
+      </div>
     </div>
-	<div class="column" ondrop="drop(event)" ondragover="allowDrop(event)">
-        <div class="container bg-info rounded">
-            <p class="divCategoryHeadParagraph"><strong>Current</strong></p>
-            <!--Possibly use developing instead of current?-->
-        </div>
+    <div class="column" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <div class="container bg-info rounded">
+        <p class="divCategoryHeadParagraph"><strong>Current</strong></p>
+        <!--Possibly use developing instead of current?-->
+      </div>
     </div>
-	<div class="column" ondrop="drop(event)" ondragover="allowDrop(event)">
-        <div class="container bg-success rounded">
-            <p class="divCategoryHeadParagraph"><strong>Finished</strong></p>
-        </div>
+    <div class="column" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <div class="container bg-success rounded">
+        <p class="divCategoryHeadParagraph"><strong>Finished</strong></p>
+      </div>
     </div>
-</div>
+  </div>
+
+  <!-- New Kanban Board -->
+  <!--
+  <table class="" style="width:100%; margin-top: 50px;">
+    <tr>
+      <th width="25%">BackLog</th>
+      <th width="25%">Today</th>
+      <th width="25%">Current</th>
+      <th width="25%">Finished</th>
+    </tr>
+    <tr id="blank_row" height="50px" style="">
+      <td ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+      <td ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+      <td ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+      <td ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+    </tr>
+  </table>
+-->
 
 
 
+  <!-- Task Card Structure -->
 
+  <!--Card Header-->
+  <div class="task" style="display: none;" id="taskCard" draggable="true" ondragstart="drag(event)">
+    <header class="w3-container w3-round w3-blue taskName" id="taskHeader">
+      <h1 style="display:inline;">Task Name</h1>
+      <button type="button" class="close" aria-label="Close" style="float:right;" id="deleteTask" onclick="remove(this.id)"> X </button>
 
+      <i class="fa fa-pencil-square-o" aria-hidden="true" onclick=""></i>
+
+      <a onclick="show_hide(this.id)" style="cursor:pointer; text-decoration:underline; float: right;" id="showTask">Hide</a>
+    </header>
+    <!-- Card Body -->
+    <div id="collapseTask">
+      <div class="w3-container">
+        <p><strong>Progress: </strong></p>
+        <div class="w3-light-grey w3-round">
+          <!--Need to change colors based on prio-->
+          <div class="w3-light-blue w3-center" id="taskPercent" style="width:12%">12%</div>
+        </div>
+        <div class="container" align="center">
+          <br>
+          <button type="button" class="btn btn-dark rounded" onclick="move(this.id)">Complete</button>
+          <br>
+          <br>
+        </div>
+      </div>
+      <!-- Card Footer -->
+      <footer class="w3-blue" id="taskFooter">
+        <h5>worker</h5>
+      </footer>
+    </div>
+  </div>
+  <!-- Place where new cards get placed -->
+  <div id="clonehere"></div>
 
 </body>
-
-<script>
-// Get the modal
-var modal = document.getElementById('id01');
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-</script>

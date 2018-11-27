@@ -5,6 +5,8 @@ from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.utils import timezone
+
+
 class Team(models.Model):
     team_name = models.CharField(max_length = 500, unique = True)
     team_description = models.TextField(max_length = 1024)
@@ -32,6 +34,30 @@ class Profile(models.Model):
     birth_date = models.DateField(null=True, blank=True)
     email_confirmed = models.BooleanField(default=False)
 
+class allMembers(models.Model):
+    team_members = models.ForeignKey(User,on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.team_members
+
+class newTeamcreation(models.Model):
+    team_name = models.CharField(max_length=100)
+    team_description = models.TextField(max_length=300)
+    team_member = models.ManyToManyField(User)
+    dateofcreation = models.DateTimeField(default = timezone.now)
+    team_created_by = models.CharField(max_length=100,blank=True,null=True)
+
+    def __str__(self):
+        return u'%s %s %s %s' % (self.team_name, self.team_description,self.team_member,self.team_created_by)
+
+
+
+class attendance(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    attendance = models.PositiveSmallIntegerField()
+    code = models.CharField(max_length=100)
+    ip_address = models.GenericIPAddressField()
+    att_date = models.DateTimeField('date published')
 
 
 @receiver(post_save, sender=User)

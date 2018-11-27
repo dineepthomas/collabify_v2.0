@@ -1,0 +1,241 @@
+/***Task Creation Modal css***/
+
+
+/* Extra styles for the cancel button */
+body{
+  font-size: 18px;
+  padding: 2px;
+}
+html, body{
+    height:100%;
+}
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+/* position the top of the dialog box */
+.testing {
+    padding: 16px;
+    padding-top: 0px;
+}
+
+span.psw {
+    float: right;
+
+}
+
+
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 0px;
+}
+  /* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 350px;
+}
+
+/* The Close Button (x) */
+.closer {
+    position: absolute;
+    right: 10px;
+    top: -3px;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+/*Doesn't work to the best of my knowledge*/
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Task Creation Header */
+.header{
+    font-size: 20px;
+    text-align: center;
+    border: 1px solid #cccccc;
+    background-color: #d9d9d9;
+    border-radius: 4px;
+    margin: 2px;
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)}
+    to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+    from {transform: scale(0)}
+    to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}
+
+
+
+/***Breadcrumb css***/
+
+ul.breadcrumb {
+    padding: 10px 16px;
+    list-style: none;
+    background-color: #333;
+}
+ul.breadcrumb li {
+    display: inline;
+    font-size: 18px;
+}
+ul.breadcrumb li+li:before {
+    padding: 8px;
+    color: black;
+    content: "/\00a0";
+}
+ul.breadcrumb li a {
+    color: #0275d8;
+    text-decoration: none;
+}
+ul.breadcrumb li a:hover {
+    color: #01447e;
+    text-decoration: underline;
+}
+
+
+
+/***Kanban Board css***/
+
+/* divCategory affects the columns of the board */
+.divCategory{
+    width: 250px;
+    height: auto;
+    padding: 10px;
+    padding-bottom: 50px;
+    border: 1px solid black;
+}
+
+.column{
+    width: 25%;
+    float: left;
+    margin-bottom:0px;
+    padding-bottom: 50px;
+    padding:auto;
+    text-align: center;
+    height: auto;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    border-collapse: collapse;
+
+}
+.master{
+    border: 1px solid black;
+    
+    overflow: auto;
+    border-collapse: collapse;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    
+}
+.blank_row
+{
+    padding-bottom: 90px;
+}
+
+table, td{
+    resize: vertical;
+    overflow: auto;
+    empty-cells: show;
+    padding-bottom: 30px;
+}
+
+/* There are two #cloneheres, need to figure out which one is used */
+#clonehere{
+    width: 350px;
+    height: 500px;
+    padding: 10px;
+    float: left;
+}
+.divCategoryHeadParagraph{
+    text-align: center;
+    vertical-align: middle;
+    color: white
+}
+.taskName{
+    padding-top: 4px;
+    padding-bottom: 3px;
+}
+.percentageBar{
+    padding-top: 3px;
+}
+#clonehere{
+    width: 350px;
+    height: 200px;
+}
+
+
+
+label, input {
+    display:block;
+}
+
+.well-header{
+    background-color:black;
+}
+
+input.text {
+    margin-bottom:12px; width:100%; padding: .4em;
+}
+fieldset {
+    padding:0; border:0; margin-top:10px; width:100%;
+}
+h1 {
+    font-size: 1.2em; margin: .6em 0;
+}
+p{
+    margin:4px;
+    text-align: center;
+}
+
+/*Prevents unwanted close button from showing in dialog*/
+.ui-dialog-titlebar-close {
+    visibility: hidden;
+}
+
+info
+.fa {
+    background-color: inherit;
+    float:right;
+    margin:5px;
+}

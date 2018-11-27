@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+  <script src="//d3js.org/d3.v3.min.js"></script>
+  {% load static %}
+  <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+</head>
+<style>
+
+</style>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid"style="background-color:#000000;">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#" style="background-color:#000000;"><font color="white" style=" size: 20px; font-family: 'Exo 2', sans-serif;"><strong>Collabify </strong></font>
+        <font style="font-size:22px;font-family:'Pacifico', cursive; color:white; padding-left:10px;">for</font>
+      </a>
+      <img src = "../static/images/index_4.png" class="img-responsive" height="100" width="100" style="padding-top:10px;"><br>
+    </div>
+    <div>
+
+    </div>
+    </div>
+</nav>
+<br>
+<br></br>
+
+<div class="well">
+    <div style="float:right;">
+      <a style="color:black;"><i class="fas fa-edit"></i> Edit</a>
+    </div>
+  <form method="get" action="/dashboard">
+    <button type = "submit" style = "border-radius:5px;background-color:#3C3A3A;border-color: #6E6868;margin: 2px; font-family: 'Exo 2', sans-serif;" class ="btn btn-primary"><i class="fas fa-home"> </i> Home</button>
+    <form method="get" action="/dashboard">
+      <button type = "submit" style = "border-radius:5px;background-color:#3C3A3A;border-color: #6E6868;margin: 2px; font-family: 'Exo 2', sans-serif;" class ="btn btn-primary"><i class="fas fa-chalkboard-teacher"></i> Team attendance</button>
+    </form>
+  </form>
+</div>
+
+<div class="container-fluid">
+<p style = "font-size:20px; text-align:center;"><strong>Team {{ text }}</<strong></p>
+</div>
+
+<div class="row">
+  <div class="col-md-6 well">
+    <p style="font-size:20px;">Team Members:</p>
+    {% for i in team_list.all %}
+    <li>{{ i }}</li>
+    {% endfor %}
+    <br>
+    <p style="font-size:20px;">Team description:</p>
+    <p>{{ team_des }}</p>
+  </div>
+  <div class="col-md-6 well">
+    <p style="font-size:20px;">Team Progress:</p>
+  </div>
+</div>
+</body>
+</html>

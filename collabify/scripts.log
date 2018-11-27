@@ -1,0 +1,423 @@
+login failed for: dineepthomas23rdew from ip 127.0.0.1
+login failed with username: abcdwqds from ip 127.0.0.1
+login failed with username: abcduiyhkjn from ip 127.0.0.1
+login failed with username: abcdnj from ip 127.0.0.1
+login failed with username: sdvvs from ip 127.0.0.1
+login user: abcd via ip: 127.0.0.1
+logout user: abcd via ip: 127.0.0.1
+login user: abcd via ip: 127.0.0.1
+login user: abcd via ip: 127.0.0.1
+Not Found: /events
+Not Found: /js/tasks.js
+Not Found: /js/tasks.js
+login user: test via ip: 127.0.0.1
+Not Found: /events
+Not Found: /favicon.ico
+login user: test via ip: 127.0.0.1
+Not Found: /images/android-desktop.png
+Not Found: /images/favicon.png
+login user: test via ip: 127.0.0.1
+Not Found: /favicon.ico
+login user: test via ip: 127.0.0.1
+Not Found: /images/android-desktop.png
+Not Found: /images/favicon.png
+Not Found: /events
+Not Found: /js/tasks.js
+Not Found: /favicon.ico
+login user: test via ip: 127.0.0.1
+Not Found: /images/android-desktop.png
+Not Found: /images/favicon.png
+login user: test via ip: 127.0.0.1
+Internal Server Error: /team
+Traceback (most recent call last):
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/core/handlers/base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/vmalar/collabify_v2.0_4330/collabify_v2.0/collabify/scripts/views.py", line 84, in team
+    return render(request, 'team_page.html')
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/template/engine.py", line 144, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/template/engine.py", line 126, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/template/loaders/base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/template/base.py", line 160, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/template/base.py", line 198, in compile_nodelist
+    return parser.parse()
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/template/base.py", line 483, in parse
+    raise self.error(token, e)
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/template/base.py", line 481, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/template/loader_tags.py", line 292, in do_extends
+    raise TemplateSyntaxError("'%s' cannot appear more than once in the same template" % bits[0])
+django.template.exceptions.TemplateSyntaxError: 'extends' cannot appear more than once in the same template
+Internal Server Error: /team
+Traceback (most recent call last):
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/core/handlers/base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/vmalar/collabify_v2.0_4330/collabify_v2.0/collabify/scripts/views.py", line 84, in team
+    return render(request, 'team_page.html')
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/template/engine.py", line 144, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/template/engine.py", line 126, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/template/loaders/base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/template/base.py", line 160, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/template/base.py", line 198, in compile_nodelist
+    return parser.parse()
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/template/base.py", line 483, in parse
+    raise self.error(token, e)
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/template/base.py", line 481, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/template/loader_tags.py", line 292, in do_extends
+    raise TemplateSyntaxError("'%s' cannot appear more than once in the same template" % bits[0])
+django.template.exceptions.TemplateSyntaxError: 'extends' cannot appear more than once in the same template
+Internal Server Error: /team
+Traceback (most recent call last):
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/core/handlers/base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/vmalar/collabify_v2.0_4330/collabify_v2.0/collabify/scripts/views.py", line 84, in team
+    return render(request, 'team_page.html')
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/template/engine.py", line 144, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/template/engine.py", line 126, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/template/loaders/base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/template/base.py", line 160, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/template/base.py", line 198, in compile_nodelist
+    return parser.parse()
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/template/base.py", line 483, in parse
+    raise self.error(token, e)
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/template/base.py", line 481, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/template/loader_tags.py", line 292, in do_extends
+    raise TemplateSyntaxError("'%s' cannot appear more than once in the same template" % bits[0])
+django.template.exceptions.TemplateSyntaxError: 'extends' cannot appear more than once in the same template
+Internal Server Error: /team
+Traceback (most recent call last):
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/core/handlers/base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/vmalar/collabify_v2.0_4330/collabify_v2.0/collabify/scripts/views.py", line 84, in team
+    return render(request, 'team_page.html')
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/template/engine.py", line 144, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/template/engine.py", line 126, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/template/loaders/base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/template/base.py", line 160, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/template/base.py", line 198, in compile_nodelist
+    return parser.parse()
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/template/base.py", line 483, in parse
+    raise self.error(token, e)
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/template/base.py", line 481, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/template/loader_tags.py", line 292, in do_extends
+    raise TemplateSyntaxError("'%s' cannot appear more than once in the same template" % bits[0])
+django.template.exceptions.TemplateSyntaxError: 'extends' cannot appear more than once in the same template
+Internal Server Error: /team
+Traceback (most recent call last):
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/core/handlers/base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/vmalar/collabify_v2.0_4330/collabify_v2.0/collabify/scripts/views.py", line 84, in team
+    return render(request, 'team_page.html')
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/template/engine.py", line 144, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/template/engine.py", line 126, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/template/loaders/base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/template/base.py", line 160, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/template/base.py", line 198, in compile_nodelist
+    return parser.parse()
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/template/base.py", line 483, in parse
+    raise self.error(token, e)
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/template/base.py", line 481, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/vmalar/anaconda3/envs/collab/lib/python3.6/site-packages/django/template/loader_tags.py", line 292, in do_extends
+    raise TemplateSyntaxError("'%s' cannot appear more than once in the same template" % bits[0])
+django.template.exceptions.TemplateSyntaxError: 'extends' cannot appear more than once in the same template
+Not Found: /team/
+login user: test via ip: 127.0.0.1
+login user: test via ip: 127.0.0.1
+login user: test via ip: 127.0.0.1
+Not Found: /css/sequences.css
+Not Found: /css/sequences.css
+Not Found: /css/sequences.css
+Not Found: /css/sequences.css
+Not Found: /css/sequences.css
+Not Found: /css/sequences.css
+Not Found: /css/sequences.css
+Not Found: /css/sequences.css
+Not Found: /css/sequences.css
+Not Found: /css/sequences.css
+Not Found: /css/sequences.css
+Not Found: /css/sequences.css
+Not Found: /css/sequences.css
+Not Found: /css/sequences.css
+Not Found: /css/sequences.css
+Not Found: /css/sequences.css
+Not Found: /css/sequences.css
+Not Found: /css/sequences.css
+Not Found: /css/sequences.css
+Not Found: /css/sequences.css
+Not Found: /css/sequences.css
+Not Found: /css/sequences.css
+Not Found: /css/sequences.css
+Not Found: /css/sequences.css
+Not Found: /css/sequences.css
+Not Found: /css/sequences.css
+Not Found: /css/sequences.css
+Not Found: /css/sequences.css
+Not Found: /css/sequences.css
+Not Found: /css/sequences.css
+Not Found: /css/sequences.css
+Not Found: /css/sequences.css
+Not Found: /css/sequences.css
+Not Found: /css/sequences.css
+Not Found: /css/sequences.css
+Not Found: /favicon.ico
+Not Found: /images/favicon.ico
+login user: test via ip: 127.0.0.1
+Not Found: /images/android-desktop.png
+Not Found: /images/favicon.png
+login user: test via ip: 127.0.0.1
+logout user: test via ip: 127.0.0.1
+login user: test via ip: 127.0.0.1
+login user: test via ip: 127.0.0.1
+login user: test via ip: 127.0.0.1
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /js/tasks.js
+Not Found: /action_page.php
+login user: test via ip: 127.0.0.1
+Not Found: /{static 'vendor/animsition/js/animsition.min.js'}
+Not Found: /{static 'css/team_creation.css' %}
+Not Found: /{static 'js/team_creation.css' %}
+Not Found: /{static 'vendor/jquery/jquery-3.2.1.min.js'}
+Not Found: /{static 'vendor/bootstrap/js/popper.js'}
+Not Found: /{static 'vendor/bootstrap/js/bootstrap.min.js'}
+Not Found: /{static 'vendor/daterangepicker/moment.min.js'}
+Not Found: /{static 'vendor/select2/select2.min.js'}
+Not Found: /{static 'vendor/animsition/js/animsition.min.js'}
+Not Found: /{static 'vendor/bootstrap/js/popper.js'}
+Not Found: /{static 'vendor/daterangepicker/daterangepicker.js'}
+Not Found: /{static 'js/main.js'}
+Not Found: /{static 'vendor/bootstrap/js/bootstrap.min.js'}
+Not Found: /{static 'vendor/select2/select2.min.js'}
+Not Found: /{static 'vendor/daterangepicker/moment.min.js'}
+Not Found: /{static 'vendor/daterangepicker/daterangepicker.js'}
+Not Found: /{static 'js/main.js'}
+Not Found: /{static 'vendor/jquery/jquery-3.2.1.min.js'}
+Not Found: /{static 'js/team_creation.css' %}
+Not Found: /{static 'css/team_creation.css' %}
+Not Found: /{static 'vendor/bootstrap/js/popper.js'}
+Not Found: /{static 'vendor/animsition/js/animsition.min.js'}
+Not Found: /{static 'vendor/bootstrap/js/bootstrap.min.js'}
+Not Found: /{static 'vendor/select2/select2.min.js'}
+Not Found: /{static 'js/main.js'}
+Not Found: /{static 'vendor/daterangepicker/daterangepicker.js'}
+Not Found: /{static 'vendor/jquery/jquery-3.2.1.min.js'}
+Not Found: /{static 'vendor/daterangepicker/moment.min.js'}
+Not Found: /{static 'vendor/animsition/js/animsition.min.js'}
+Not Found: /{static 'vendor/bootstrap/js/popper.js'}
+Not Found: /{static 'vendor/bootstrap/js/bootstrap.min.js'}
+Not Found: /{static 'vendor/select2/select2.min.js'}
+Not Found: /{static 'vendor/daterangepicker/moment.min.js'}
+Not Found: /{static 'vendor/daterangepicker/daterangepicker.js'}
+Not Found: /{static 'js/main.js'}
+Not Found: /{static 'css/team_creation.css' %}
+Not Found: /{static 'js/team_creation.css' %}
+Not Found: /{static 'vendor/jquery/jquery-3.2.1.min.js'}
+Not Found: /{static 'vendor/animsition/js/animsition.min.js'}
+Not Found: /{static 'vendor/bootstrap/js/popper.js'}
+Not Found: /{static 'vendor/bootstrap/js/bootstrap.min.js'}
+Not Found: /{static 'vendor/select2/select2.min.js'}
+Not Found: /{static 'vendor/daterangepicker/moment.min.js'}
+Not Found: /{static 'vendor/daterangepicker/daterangepicker.js'}
+Not Found: /{static 'js/main.js'}
+Not Found: /{static 'css/team_creation.css' %}
+Not Found: /{static 'js/team_creation.css' %}
+Not Found: /{static 'vendor/jquery/jquery-3.2.1.min.js'}
+Not Found: /{static 'vendor/bootstrap/js/popper.js'}
+Not Found: /{static 'vendor/animsition/js/animsition.min.js'}
+Not Found: /{static 'vendor/bootstrap/js/bootstrap.min.js'}
+Not Found: /{static 'vendor/daterangepicker/moment.min.js'}
+Not Found: /{static 'vendor/daterangepicker/daterangepicker.js'}
+Not Found: /{static 'vendor/select2/select2.min.js'}
+Not Found: /{static 'js/main.js'}
+Not Found: /{static 'vendor/bootstrap/js/popper.js'}
+Not Found: /{static 'vendor/bootstrap/js/bootstrap.min.js'}
+Not Found: /{static 'vendor/select2/select2.min.js'}
+Not Found: /{static 'vendor/daterangepicker/moment.min.js'}
+Not Found: /{static 'vendor/daterangepicker/daterangepicker.js'}
+Not Found: /{static 'js/main.js'}
+Not Found: /{static 'css/team_creation.css' %}
+Not Found: /{static 'js/team_creation.css' %}
+Not Found: /{static 'vendor/jquery/jquery-3.2.1.min.js'}
+Not Found: /{static 'vendor/bootstrap/js/bootstrap.min.js'}
+Not Found: /{static 'vendor/animsition/js/animsition.min.js'}
+Not Found: /{static 'vendor/bootstrap/js/popper.js'}
+Not Found: /{static 'js/main.js'}
+Not Found: /{static 'vendor/select2/select2.min.js'}
+Not Found: /{static 'vendor/daterangepicker/daterangepicker.js'}
+Not Found: /{static 'vendor/daterangepicker/moment.min.js'}
+Not Found: /{static 'vendor/bootstrap/js/bootstrap.min.js'}
+Not Found: /{static 'vendor/select2/select2.min.js'}
+Not Found: /{static 'vendor/daterangepicker/moment.min.js'}
+Not Found: /{static 'vendor/daterangepicker/daterangepicker.js'}
+Not Found: /{static 'js/main.js'}
+Not Found: /{static 'css/team_creation.css' %}
+Not Found: /{static 'vendor/jquery/jquery-3.2.1.min.js'}
+Not Found: /{static 'vendor/animsition/js/animsition.min.js'}
+Not Found: /{static 'js/team_creation.css' %}
+Not Found: /{static 'vendor/bootstrap/js/popper.js'}
+Not Found: /{static 'vendor/bootstrap/js/bootstrap.min.js'}
+Not Found: /{static 'vendor/daterangepicker/moment.min.js'}
+Not Found: /{static 'js/main.js'}
+Not Found: /{static 'vendor/select2/select2.min.js'}
+Not Found: /{static 'vendor/daterangepicker/daterangepicker.js'}
+Not Found: /{static 'vendor/jquery/jquery-3.2.1.min.js'}
+Not Found: /{static 'vendor/animsition/js/animsition.min.js'}
+Not Found: /{static 'vendor/bootstrap/js/popper.js'}
+Not Found: /{static 'vendor/bootstrap/js/bootstrap.min.js'}
+Not Found: /{static 'vendor/select2/select2.min.js'}
+Not Found: /{static 'vendor/daterangepicker/moment.min.js'}
+Not Found: /{static 'vendor/daterangepicker/daterangepicker.js'}
+Not Found: /{static 'js/main.js'}
+Not Found: /{static 'js/team_creation.css' %}
+Not Found: /{static 'vendor/jquery/jquery-3.2.1.min.js'}
+Not Found: /{static 'js/main.js'}
+logout user: test via ip: 127.0.0.1
+login user: test via ip: 127.0.0.1
+Not Found: /js/tasks.js
+Not Found: /events
+login user: test via ip: 127.0.0.1
+Not Found: /events
+<<<<<<< Updated upstream
+login user: daemon22 via ip: 127.0.0.1
+logout user: daemon22 via ip: 127.0.0.1
+login user: daemon22 via ip: 127.0.0.1
+logout user: daemon22 via ip: 127.0.0.1
+<<<<<<< Updated upstream
+login failed with username: test from ip 127.0.0.1
+login failed with username: test from ip 127.0.0.1
+login user: test via ip: 127.0.0.1
+Not Found: /images/android-desktop.png
+Not Found: /images/favicon.png
+logout user: test via ip: 127.0.0.1
+login user: test via ip: 127.0.0.1
+Not Found: /favicon.ico
+login user: test via ip: 127.0.0.1
+Not Found: /images/android-desktop.png
+Not Found: /images/favicon.png
+Not Found: /favicon.ico
+logout user: test via ip: 127.0.0.1
+login user: pmoor17 via ip: 127.0.0.1
+login user: pmoor17 via ip: 127.0.0.1
+logout user: pmoor17 via ip: 127.0.0.1
+login user: test via ip: 127.0.0.1
+logout user: test via ip: 127.0.0.1
+login user: test1 via ip: 127.0.0.1
+login user: test1 via ip: 127.0.0.1
+login user: test via ip: 127.0.0.1
+logout user: test via ip: 127.0.0.1
+login user: pmoor17 via ip: 127.0.0.1
+logout user: pmoor17 via ip: 127.0.0.1
+login user: pmoor17 via ip: 127.0.0.1
+login user: pmoor17 via ip: 127.0.0.1
+login user: pmoor17 via ip: 127.0.0.1
+logout user: pmoor17 via ip: 127.0.0.1
+=======
+=======
+login user: preston via ip: 127.0.0.1
+Not Found: /images/android-desktop.png
+Not Found: /images/favicon.png
+Not Found: /favicon.ico
+login user: preston via ip: 127.0.0.1
+login user: preston via ip: 127.0.0.1
+login user: preston via ip: 127.0.0.1
+login user: preston via ip: 127.0.0.1
+logout user: preston via ip: 127.0.0.1
+login user: preston via ip: 127.0.0.1
+Not Found: /events
+>>>>>>> Stashed changes
+login failed with username: preston from ip 127.0.0.1
+login user: preston via ip: 127.0.0.1
+login user: preston via ip: 127.0.0.1
+login user: preston via ip: 127.0.0.1
+Not Found: /css/jquery-ui.css
+Not Found: /css/bootstrap.css
+Not Found: /css/jquery-ui.min.css
+Not Found: /css/dialoguetheme.css
+Not Found: /css/bootstrap.css
+Not Found: /css/jquery-ui.css
+Not Found: /css/jquery-ui.min.css
+Not Found: /css/dialoguetheme.css
+>>>>>>> Stashed changes

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>4430 Team Setup</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
+
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/team_creation.css' %}">
+  <!-- <script type="text/javascript" src = "{% static 'js/team_creation.css' %}"></script> -->
+  <script type="text/javascript" src = "{% static 'vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+  <script type="text/javascript" src = "{% static 'vendor/animsition/js/animsition.min.js' %}"></script>
+  <script type="text/javascript" src = "{% static 'vendor/bootstrap/js/popper.js' %}"></script>
+  <script type="text/javascript" src = "{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+  <script type="text/javascript" src = "{% static 'vendor/select2/select2.min.js' %}"></script>
+  <script type="text/javascript" src = "{% static 'vendor/daterangepicker/moment.min.js' %}"></script>
+  <script type="text/javascript" src = "{% static 'vendor/daterangepicker/daterangepicker.js' %}"></script>
+  <script type="text/javascript" src = "{% static 'js/main.js' %}"></script>
+
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+<!--===============================================================================================-->
+	<!-- <link rel="stylesheet" type="text/css" href="{% static 'fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}"> -->
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/animate/animate.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/css-hamburgers/hamburgers.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/animsition/css/animsition.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/select2/select2.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/daterangepicker/daterangepicker.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/utils.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+<!--===============================================================================================-->
+
+
+</head>
+<body>
+
+<div class="container-contact100">
+        {% for message in messages %}
+        <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          {{ message }}
+      {% endfor %}
+    </div>
+
+  <div class="wrap-contact100" style="font-family: 'Exo 2', sans-serif;">
+    <form class="contact100-form validate-form" method="post" enctype='multipart/form-data'>{% csrf_token %}
+      <span class="contact100-form-title">
+        <p style = "font-family: 'Exo 2', sans-serif; font-size:30px;">Collabify : Team setup</p>
+      </span>
+      <p>Note: All fields are required</p>
+      <br>
+
+      {{ form.non_field_errors }}
+      <div class="wrap-input100 validate-input" data-validate="Please enter your team name">
+        {{ form.team_name.errors }}
+        <input class="input100" type="text" name= "team_name" placeholder="Team Name">
+
+        <!-- <label for="id_name">Team Name</label> -->
+        <!-- {{ form.team_name }} -->
+          <span class="focus-input100"></span>
+      </div>
+      <!-- * team description -->
+      <div class="wrap-input100 validate-input" data-validate = "Please enter your team description">
+          {{ form.team_description.errors }}
+        <textarea class="input100" name="team_description" placeholder="Team Description"></textarea>
+        <!-- <label for="id_description">Team Description</label> -->
+        <!-- {{ form.team_description }} -->
+        <span class="focus-input100"></span>
+      </div>
+      <!-- team members -->
+      <div class="validate-input" data-validate="Please enter your team name">
+        {{ form.team_member.errors }}
+        <label for="id_team_member1">Team Member </label>
+        {{ form.team_member }}
+      </div>
+      <div class="container-contact100-form-btn">
+        <button class="contact100-form-btn", type="submit">
+          <span>
+            <i class="fa fa-paper-plane-o m-r-6" aria-hidden="true"></i>
+            <p style = "font-family: 'Exo 2', sans-serif; font-size:15px; color:white;">Good to go</p>
+
+          </span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+	<div id="dropDownSelect1"></div>
+
+<!--===============================================================================================-->
+	<script src="{% static 'vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'vendor/animsition/js/animsition.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'vendor/bootstrap/js/popper.js' %}"></script>
+	<script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'vendor/select2/select2.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'vendor/daterangepicker/moment.min.js' %}"></script>
+	<script src="{% static 'vendor/daterangepicker/daterangepicker.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'vendor/countdowntime/countdowntime.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'js/main.js' %}"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
+</body>
+</html>
